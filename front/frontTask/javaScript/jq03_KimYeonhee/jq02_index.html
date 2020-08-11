@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/jq02_index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/jq02_index.js"></script>
+</head>
+<body>
+	<div id="header">
+		<p>Encore 극장</p>
+	</div>
+	<div id="nav">
+		<a href="#">최신 DVD</a>
+		<a href="#">DVD 목록</a>
+		<a href="jimList.html">찜 리스트</a>
+	</div>
+	<div id="section">
+		<div id="intro">
+			<p id="title">무공해 힐링 시네마</p>
+			<p id="content">무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는 영화나, 마음을 정화시키고 치유하는 힘을 가진 영화를 ... .</p>
+		</div>
+		<div id="movieset">
+			<div id="preview">
+				<video src="img/KungFuPanda_Sample.mp4" controls></video>
+			</div>
+			<div id="movielist">
+				<table>
+					<tr id="productName">
+						<th>쿵푸팬더</th>
+						<th>어벤져스</th>
+						<th>빅벅</th>
+					</tr>
+					<tr id="productImg">
+						<td><img src="img/movie_image2.jpg"></td>
+						<td><img src="img/TheAvengers2012Poster.jpg"></td>
+						<td><img src="img/BigBuck.jpg"></td>
+					</tr>
+					<tr>
+						<form action="jimList.html" method="post" id="jimFrm">
+						<td>
+							<button type=button name="img/KungFuPanda_Sample.mp4">미리보기</button>
+							<input type=button name=1001 class=3000 value="찜하기">
+						</td>
+						<td>
+							<button type=button name="img/avengers.mp4">미리보기</button>
+							<input type=button name=1002 class=3000 value="찜하기">
+						</td>
+						<td>
+							<button type=button name="img/BigBuck.theora.ogv">미리보기</button>
+							<input type=button name=1003 class=5000 value="찜하기">
+						</td>
+						</form>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<table>
+			<tr>
+				<th><p>About</p></th>
+				<th><p>개인정보 취급 방침</p></th>
+				<th><p>공지사항</p></th>
+			</tr>
+			<tr>
+				<td><p>서울 남부터미널 엔코아 아카데미<p></td>
+					<td><a href="#" class="blank">개요</a></td>
+					<td><a href="#" class="blank">오시는 길</a></td>
+			</tr>
+			<tr>
+				<td><a href="encore@academy.com">encore@academy.com</a></td>
+				<td><a href="#" class="blank">문의처</a></td>
+				<td><a href="#" class="blank">오류시 문의사항</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

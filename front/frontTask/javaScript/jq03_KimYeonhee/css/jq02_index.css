@@ -1,0 +1,102 @@
+@charset "UTF-8";
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#header{
+		padding-top: 20px;
+		padding-left: 100px;
+		padding-bottom: 5px;
+		font-weight: bold;
+		font-size: 25px;
+		background: #EAEAEA;
+	}
+	
+	#nav{
+		background: black;
+		padding-left: 150px;
+		padding-top: 10px; 
+		padding-bottom: 10px; 
+	}
+	#nav a{
+		margin-right: 90px;
+	}
+	#nav a:link{ color: white; text-decoration: none;}
+	#nav a:visited{ color: white; }
+	
+	#section{
+		width: 84%;
+		margin: 0 auto;
+	}
+	
+	#section #intro{
+		background: #22741C;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		padding-top: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 5px;
+		border-radius: 15px;
+	}
+	#intro #title{
+		color: white;
+		font-size: 30px;
+		margin-bottom: 12px;
+	}
+	#intro #content{
+		color: #ABF200;	
+		font-size: 15px;
+	}
+	
+	#section #movieset{
+		padding-bottom: 10px;
+		overflow: hidden;
+	}
+	
+	#section #preview{
+		float: left;
+	}
+	#preview video{
+		width: 500px;
+	}
+	
+	#section #movielist{
+		margin-left: 20px;
+		float: left;
+	}
+	#movielist table th{
+		text-align: left;
+		font-size: 28px;
+		color: grey;
+	}
+	#movielist table img{
+		width: 150px;
+		height: 180px;
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+	
+	#footer{
+		background: #4C4C4C;
+		padding-left: 120px;
+		padding-top: 15px;
+		padding-bottom: 30px;
+	}
+	#footer table th p{
+		color: white;
+		font-size: 18px;
+		text-align: left;
+		margin-right: 150px;
+		margin-bottom: 5px;
+	}
+	#footer table td p{
+		color: #A6A6A6;
+		font-size: 14px;
+		margin-right: 150px;
+	}
+	#footer table a:link{ color: #BDBDBD; font-size: 14px; }
+	#footer table a:visited{ color: #BDBDBD; font-size: 14px; }
+	#footer table .blank{
+		padding-left: 40px;
+	}
