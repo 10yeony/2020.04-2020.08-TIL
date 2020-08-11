@@ -1,0 +1,32 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] bList = new int[3];
+		bList[0] = sc.nextInt();
+		bList[1] = sc.nextInt();
+		bList[2] = sc.nextInt();
+		int bMax = bList[0];
+		int bMin = bList[0];
+		int indexMax = 0;
+		int indexMin = 0;
+		int indexMiddle = 0;
+		for(int i=0; i<3; i++) {
+			if(bMax < bList[i]) {
+				bMax = bList[i];
+				indexMax = i;
+			}
+			if(bMin > bList[i]) {
+				bMin = bList[i];
+				indexMin = i;
+			}
+		}
+		for(int i=0; i<3; i++) {
+			if(i==indexMax || i==indexMin) continue;
+			indexMiddle = i;
+		}
+	}
+}

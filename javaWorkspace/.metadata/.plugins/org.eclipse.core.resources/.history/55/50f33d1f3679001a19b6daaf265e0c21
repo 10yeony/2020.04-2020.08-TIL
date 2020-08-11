@@ -1,0 +1,21 @@
+package oop.constructor.test;
+
+import oop.constructor.Shirt;
+
+public class ShirtTest {
+
+	public static void main(String[] args) {
+		Shirt roundT = new Shirt();
+		Shirt jumpa = new Shirt();
+		Shirt banpalT = new Shirt();
+		// 서로 다른 셔츠객체가 만들어졌다면 Heap 영역에 객체 3개가 로드되어 있을 것이고 
+		// 각각의 위치는 서로 다르기 때문에 참조변수의 주소값들은 서로 다르게 나와야 한다
+		System.out.println(roundT);
+		System.out.println(jumpa);
+		System.out.println(banpalT); // 주소값들이 나오고 객체가 만들어졌다는 게 확인됨
+		System.out.println("++++++++++++++++++++++++++++++++++");
+		System.out.println(roundT.getDetails());
+		System.out.println(jumpa.getDetails());
+		System.out.println(banpalT.getDetails());
+	}
+}

@@ -1,0 +1,20 @@
+package self.test;
+
+class CatchAMouse{
+	public static String solv(int x, int y, int z) {
+		/*
+		 * 구현...
+		 * Math.abs()
+		 */
+		return "";
+	}
+}
+public class CatchAMoustTest {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		// 순서대로 값을 입력받고
+		// 입력받은 값을 CatchAMouse에 값을 넣으면 됨. 근데 static이니까 객체 생성 필요X.
+
+	}
+
+}

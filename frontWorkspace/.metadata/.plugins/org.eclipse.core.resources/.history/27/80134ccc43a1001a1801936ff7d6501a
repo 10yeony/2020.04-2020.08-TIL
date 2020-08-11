@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	
+});
+</script>
+</head>
+<body>
+<table border="2" bgcolor="yellow" width="400">
+	<tr>
+		<td><input type="checkbox" name="allCheck"></td>
+		<td>전체선택</td>
+	</tr>
+</table>
+</body>
+</html>

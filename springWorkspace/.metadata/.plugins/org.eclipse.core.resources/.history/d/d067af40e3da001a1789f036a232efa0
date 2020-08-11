@@ -1,0 +1,8 @@
+package com.encore.spring;
+
+public class MyBatisJunitTest2 {
+	@Test
+	public void unit() throws Exception{
+		
+	}
+}

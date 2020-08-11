@@ -1,0 +1,40 @@
+package array.test3;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * flat 평평한. 평평하게 만들다.
+ */
+public class FlattenBoxTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int tc = 10; // test case
+		int boxLen = 100; // box length
+		for(int tcn=1; tcn<=tc; tcn++) {//test case number
+			int dump = sc.nextInt();
+			int[ ] boxes = new int[boxLen]; // 박스 개수 100개
+			for(int i=0; i<boxes.length; i++) {
+				boxes[i] = sc.nextInt();
+			}//초기화 완료
+			int heightDiff = flatten(boxes, dump); // height Difference는 평탄화 작업이 끝났을 때.
+			System.out.printf("#%d %d%n", tcn, heightDiff);
+		}//for
+	}//main
+
+	private static int flatten(int[] boxes, int dump) {
+		
+		for(int i=0; i<dump; i++) {
+			Arrays.sort(boxes); // 오름차순으로 정렬
+			int diff = boxes[boxes.length-1]-boxes[0]; // 가장 뒤에 있는 값과 가장 앞에 있는 값 빼기
+			if(diff<=1) {
+				return diff;
+			}
+			boxes[0]++;
+			boxes[boxes.length-1]--;
+		}
+		return 0;
+	}
+}

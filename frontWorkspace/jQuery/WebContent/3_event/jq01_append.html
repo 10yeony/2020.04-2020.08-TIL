@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>append(), after() | prepend(), before()</title>
+<style>
+	body{
+		padding: 50px;
+	}
+	
+	div{
+		border: 2px solid #bbb;
+		padding: 10px;
+		margin: 10px auto;
+		background-color: #eee;
+	}
+	span{
+	/* 나중에 만들어질 span에 css가 먹힘 */
+		display: block;
+		width: 65px;
+		font: bold 12px Arial, Sans-Serif;
+		/* Arial이 없으면 Sans-Serif 씀 */
+		/* 둘 중 하나는 쓰게 됨 */
+		color: white;
+		padding: 5px 10px;
+		background-color: black;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+/* 태그에 내용물을 부착할 때 쓸 수 있는 4가지 방법 */
+	$(function(){
+		/* 꼭 옆에 안 붙여도 됨. enter가 무력화됨. */
+		/* 중간에 ; 쓰면 끊김 */
+		
+		/* append/prepend는 바로 뒤/앞에 붙음. 영역 안에서! */
+		/* after/before는 영역 밖에서 붙음. */
+		$('div')
+		.append('<span>1. Append</span>')
+		.after('<span>2. After</span>')
+		.prepend('<span>3. Prepend</span>')
+		.before('<span>4. Before</span>')
+	});
+</script>
+</head>
+<body>
+<div>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</div>
+</body>
+</html>

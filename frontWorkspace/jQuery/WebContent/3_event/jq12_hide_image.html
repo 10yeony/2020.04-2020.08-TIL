@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 숨기기 hide() | 이미지 보이기 show()</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	//1. 일단은 이미지 숨긴다.
+	//2. 사진 보기 부분의 배경색은 노랑으로 지정...css
+	$('#imageView').hide();
+	$('#mouseIn').css('background', 'yellow');
+	
+	/* //3.
+	$('#mouseIn').mouseenter(function(){
+		//$('#imageView').show(3000);
+		//$('#imageView').show('slow');
+		$('#imageView').fadeIn(2000);
+	});
+	
+	//4.
+	$('#mouseIn').mouseleave(function(){
+		//$('#imageView').hide(3000);
+		//$('#imageView').hide('slow');
+		$('#imageView').fadeOut(2000);
+	}); */
+	
+	$('#mouseIn').hover(function(){
+		$('#imageView').fadeIn(2000);
+	}, function(){
+		$('#imageView').fadeOut(2000);
+	})
+});
+</script>
+</head>
+<body>
+<h2 id="mouseIn">++++++++++++++ 사진 보기 ++++++++++++++</h2>
+<div id="imageView"><img src="../image/1.JPG" width="300" height="400"></div>
+</body>
+</html>
+<!-- 
+val() => 폼에 있는 값 받아오거나 입력
+html(), text() => html 화면에 뿌림
+setTimeout(function(){
+	//=> 특정한 시간 후에 동작. 단 한번만 호출됨.
+},3000); 
+setInterval(function(){
+	// 특정한 시간마다 동작
+}, 3000);
+
+bind(), click(), hover(), each()
+unbind(), 
+hide(3000), show('fast'), fadeOut(), fadeIn()
+find() => 특정한 태그가 있는지 없는지 찾을 때 씀.
+addClass(), removeClass(), css()
+mouseenter(), mouseleave() => hover()로 써서 크게 필요X. 하나로 쓸 때는 필요함.
+-->
+

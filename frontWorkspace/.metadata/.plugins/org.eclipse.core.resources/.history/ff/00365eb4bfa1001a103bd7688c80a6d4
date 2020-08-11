@@ -1,0 +1,27 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+	public static void main(String[] args) {
+		int n = 1000001;
+		int answer = 0;
+        int[] fList = new int[n+1];
+        fList[0] = 0;
+        fList[1] = 1;
+        for(int i=2; i<80; i++){
+            while(fList[i-1] >= 1234567 && fList[i-2] >= 1234567) {
+            	fList[i-1] -= 1234567;
+            	fList[i-2] -= 1234567;
+            	System.out.println("첫번째수 : "+i-1);
+            	System.out.println("두번째수 : "+i-2);
+            }
+            fList[i] = fList[i-1] + fList[i-2];
+            System.out.println("세번째수 : "+fList[i]);
+        }
+        answer = (int)fList[n] % 1234567;
+        
+        System.out.println(answer);
+	}
+
+}

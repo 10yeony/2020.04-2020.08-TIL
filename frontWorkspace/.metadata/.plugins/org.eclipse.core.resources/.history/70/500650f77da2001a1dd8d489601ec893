@@ -1,0 +1,23 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+	public static void main(String[] args) {
+		int n = 1000001;
+		int answer = 0;
+        int[] fList = new int[n+1];
+        fList[0] = 0;
+        fList[1] = 1;
+        for(int i=2; i<n+1; i++){
+            fList[i] = fList[i-1] + fList[i-2];
+            while(fList[i] >= 1234567) {
+            	fList[i] -= 1234567;
+            }
+            System.out.println("피보나치수 : "+fList[i]);
+        }
+        answer = fList[n];
+        System.out.println(answer);
+	}
+
+}

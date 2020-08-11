@@ -1,0 +1,12 @@
+package oop.greet.test;
+
+public class EncoreGreetTest {
+
+	public static void main(String[] args) {
+		EncoreGreetTest en = new EncoreGreet();
+		en.sayHello();
+		// TODO Auto-generated method stub
+
+	}
+
+}

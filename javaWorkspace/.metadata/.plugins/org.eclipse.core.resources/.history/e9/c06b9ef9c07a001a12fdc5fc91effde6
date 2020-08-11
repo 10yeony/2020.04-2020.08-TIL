@@ -1,0 +1,17 @@
+package array.test2;
+
+public class ArrayPersonTypeTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+/*
+
+6
+1 4 4 4 5 3
+
+*/

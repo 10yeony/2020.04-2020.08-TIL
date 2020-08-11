@@ -1,0 +1,17 @@
+package oop.self.test;
+
+import java.util.Scanner;
+
+import oop.self.Programmer;
+
+public class ProgrammerTest {
+
+	public static void main(String[] args) {
+		Programmer pro = new Programmer();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("<프로그래머를 소개해주세요>");
+		
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package oop.greet.test;
+
+import java.util.Scanner;
+
+import oop.greet.EncoreGreet;
+
+public class EncoreGreetTest2 {
+	public static void main(String[] args) { //실행 메소드
+		EncoreGreet en = new EncoreGreet(); 
+		//field에 값 할당...
+		en.name ="김연희";
+		en.message="반가워요"
+				
+		en.sayHello();
+	}
+
+}

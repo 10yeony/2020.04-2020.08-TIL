@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 1. 각각의 컬럼들의 비중을 동일하게 하려면... -->
+<div class="row">
+	<div class="col-lg-4">
+	Bootstrap is a free front-end framework for faster and easier web development
+	</div>
+	<div class="col-lg-4">
+	Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
+	</div>
+	<div class="col-lg-4">
+	Bootstrap also gives you the ability to easily create responsive designs
+	</div>
+</div>
+<hr>
+
+<!-- 
+container는
+일정한 규격에 싸서 보여짐 .
+화면을 100% 다 쓰지 않고 부트스트랩에서 제공하는 규격에 맞게 쓴다.
+화면을 100% 쓰려면 container 빼고 쓰면 됨
+-->
+<div class="container">
+<div class="row">
+	<div class="col-lg-4">
+	Responsive web design is about creating web sites which automatically adjust themselves to look good on all devices, from small phones to large desktops.	
+	</div>
+	<div class="col-lg-4">
+	Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins	
+	</div>
+</div>
+</div>
+</body>
+</html>

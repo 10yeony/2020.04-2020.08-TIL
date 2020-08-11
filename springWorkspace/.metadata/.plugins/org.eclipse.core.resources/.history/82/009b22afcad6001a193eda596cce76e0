@@ -1,0 +1,15 @@
+package ibatis.services.user;
+
+import java.util.List;
+
+import ibatis.services.domain.User;
+/*
+ * 데이터 가공 레이어...
+ */
+public interface UserService {
+	int addUser(User user) throws Exception;
+	int updateUser(User user) throws Exception;
+	int removeUser(String userId) throws Exception;
+	User getUser(String userId) throws Exception;
+	List<User> getUserList(User user) throws Exception;
+}

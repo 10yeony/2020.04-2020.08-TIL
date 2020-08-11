@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="MemberMapper">
+	<resultMap type="member" id="memberSelect">
+		<result property="id" column="id"/>
+		<result property="pwd" column="password"/>
+		<result property="name" column="name"/>
+		<result property="addr" column="address"/>
+	</resultMap>
+	
+	<sql id="select-members">
+		SELECT 
+		id, password, name, address
+		FROM member
+	</sql>
+	
+	<select id="viewAllMember" resultType="member" resultMap="memberSelect">
+		<include refid="select-members"></include>
+	</select>
+	
+	<select id="findMember" parameterType="string" resultType="member" resultMap="memberSelect">
+		<include refid="select-items"></include>
+		WHERE item_id LIKE '%${value}%'
+	</select>
+	
+	<update id="updateRecordCount" parameterType="int">
+		UPDATE item 
+		SET count=count+1 
+		WHERE item_id = ${value}
+	</update>
+</mapper>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

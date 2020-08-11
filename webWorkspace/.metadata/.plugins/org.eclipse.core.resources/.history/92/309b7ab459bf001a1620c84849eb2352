@@ -1,0 +1,23 @@
+package practice;
+
+import java.util.*;
+
+class Solution{
+    public int solution(int a, int b, int range){
+        int total=0;
+        for(int i=1; i<range+1; i++){
+            if(i%a==0 || i%b==0){
+                total+=i;
+            }
+        }
+        return total;
+    }
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		Solution sl = new Solution();
+		System.out.println(sl.solution(3, 5, 15));
+	}
+}

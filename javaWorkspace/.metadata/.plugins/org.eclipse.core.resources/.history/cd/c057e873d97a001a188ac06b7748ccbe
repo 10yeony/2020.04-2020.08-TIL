@@ -1,0 +1,16 @@
+package vo;
+
+public class Person {
+	private String maker;
+	private int price;
+	private int count;
+	
+	public Person(String maker, int price, int count) {
+		super();
+		this.maker = maker;
+		this.price = price;
+		this.count = count;
+	}
+	
+	
+}

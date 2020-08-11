@@ -1,0 +1,42 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+import com.encore.spring.model.MemberService;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	
+	@Autowired
+	private MemberDAO memberDao;
+	
+	@Override
+	public List<Member> viewAllMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Member findMember(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void registerMember(Member vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateMember(Member vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

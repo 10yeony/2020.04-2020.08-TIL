@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	//입력폼을 선택자로 지정
+	//javascript에서는 폼안에 입력된 값을... 폼까지 선택자로 지정한 다음 frm.value;로 받아옴.
+	//jquery에서는 폼안에 입력된 값을... frm.val();로 받아옴.. frm.val('aaa'); aaa라는 값을 넣음.
+	$(function(){
+		//~.value는 자바스크립트. 제이쿼리는 함수! val()
+		var str = $('input[name=userName]').val("James");
+		var str = $('input[name=userAddr]').val("NY");
+	});
+</script>
+</head>
+<body>
+<form action="jq01_result.jsp" method="get">
+	<input type="text" name="userName">
+	<input type="text" name="userAddr">
+	<input type="submit">
+</form>
+<!-- http://127.0.0.1:8888/jQuery/2_function/js01_result.jsp -->
+<!-- jQuery는 root context. js01_result.jsp는 서버에 있는 파일 -->
+<!-- http://127.0.0.1:8888/jQuery/2_function/js01_result.jsp?userName=James&userAddr=NY -->
+<!-- 이렇게 날아감. -->
+</body>

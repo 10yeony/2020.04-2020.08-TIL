@@ -1,0 +1,54 @@
+package practice;
+
+import java.util.Arrays;
+
+class Solution2{
+	public int[] reverseSort(int[] candles) {
+		Arrays.sort(candles);
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i<candles.length; i++) {
+			sb.append(Integer.toString(candles[i]));
+		}
+		String str = sb.reverse().toString();
+		for(int i=0; i<candles.length; i++) {
+			candles[i] = Integer.parseInt(str.substring(i, i+1));
+		}
+		return candles;
+	}
+	
+    public int solution(int[] candles){
+    	int num = 0;
+    	boolean flag = true;
+    	for(int i=candles.length-1; i>=0; i--) {
+    		for(int j=0; j<=i; j++) {
+    			candles = reverseSort(candles);
+    			System.out.println(candles[j]);
+    			if(candles[j]==0) {
+    				System.out.println("0입니다.");
+    				flag = false;
+    				break;
+    			}
+    			candles[j] -= 1;
+    			System.out.println("변화 : "+candles[j]);
+    		}
+    		if(flag==true) {
+    			System.out.println(i+"번째 성공 +1 => 현재까지의 횟수"+num);
+    			num++;
+    		}
+    		else {
+    			System.out.println("반복문 break");
+    			break;
+    		}
+    	}
+        return num+1;
+    }
+}
+
+public class CT2 {
+	
+	public static void main(String[] args) {
+		Solution2 sl = new Solution2();
+		int[] candles = {1,1,2,0};
+		System.out.println(sl.solution(candles));
+	}
+}

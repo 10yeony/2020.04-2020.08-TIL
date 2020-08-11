@@ -1,0 +1,17 @@
+package array.test1;
+
+class ArrayExam{
+	String type = "¹è¿­";
+	public String type() {
+		return type;
+	}
+}
+
+public class ArrayBasicTest1 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

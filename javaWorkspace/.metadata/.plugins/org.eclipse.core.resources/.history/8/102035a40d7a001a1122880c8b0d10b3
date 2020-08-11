@@ -1,0 +1,28 @@
+package condition.test;
+
+import java.util.Random;
+
+/*
+ * formating과 삼항 연산자
+ */
+
+public class ConditionTest6 {
+
+	public static void main(String[] args) {
+		String result = ""; // 로컬변수는 기본값이 없으므로 이렇게라도 초기화시켜야 함.
+		Random r = new Random(); // 이걸로 하면 math.random()보다 더 간단하게 쓸 수 있음.
+		System.out.println("=======큰수? 혹은 작은수?");
+		// 0~99 사이의 임의의 정수
+		int num1 = r.nextInt(100); // 100 넣으면 99까지 됨.
+		System.out.println(num1);
+		
+		if(num1>50) result="큰수";
+		else result="작은수";
+		
+		System.out.println(num1+"은 50보다 "+result+"입니다.");
+		System.out.printf("%d는(은)) %s이다%n", num1, result); // %d 점수값, %s string. %n=blank
+		//println에서 안 됨. printf에서 됨. f=format. formating...
+
+	}
+
+}

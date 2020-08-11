@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+ <configuration>
+ 	<!-- Wiring 시킨다. 클래스가 해징하듯이 파일들을 자동으로 연결시킴 -->
+ 	<properties resource="config/dbconn.properties"/>
+ 	
+ 	<!-- FQCN이 기니까 alias로 쓴다 -->
+ 	<!-- 복수로 끝나는 태그는 안에 단수로 끝나는 태그가 있다. -->
+ 	<typeAliases>
+ 		<typeAlias type="com.encore.mybatis.vo.MySawon" alias="mySawon"/>
+ 	</typeAliases>
+ 	
+ 	<!-- db서버 정보를 등록 -->
+ 	<!-- default와 id에 어떤 값이든 넣어도 되는데 같은 값으로 넣어줘야 한다. -->
+ 	<environments default="development">
+ 		<environment id="development">
+ 			<transactionManager type="JDBC"/>
+ 			<!-- type=UNPOOLED ==> DriverManager 방식 -->
+ 			<!-- type=POOLED ==> DataSource 방식 -->
+ 			<!-- type=JNDI ==> Naming Service... POOLED와 같다 -->
+ 			<dataSource type="UNPOOLED">
+ 				<!-- Setter -->
+ 				<property name="driver" value="${jdbc.mysql.driver}"/>
+ 				<property name="url" value="${jdbc.mysql.url}"/>
+ 				<property name="username" value="${jdbc.mysql.username}"/>
+ 				<property name="password" value="${jdbc.mysql.password}"/>
+ 			</dataSource>
+ 		</environment>
+ 	</environments>
+ 	
+ 	<!-- SQL Mapping -->
+ 	<mappers>
+ 		<mapper resource="mapper/mysawon_mapping.xml"/>
+ 	</mappers>
+ </configuration>

@@ -1,0 +1,146 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/test.js"></script>
+<link rel="stylesheet" href="css/test.css">
+<style>
+
+</style>
+</head>
+
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+		<ul>
+			<li><a href="http://justinfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> Home </span>
+			</a></li>
+			<li class="has-subnav"><a href="#"> <i
+					class="fa fa-play fa-2x"></i> <span class="nav-text"> Game </span>
+			</a></li>
+			<li><a href="#"> <i class="fa fa-bar-chart-o fa-2x"></i> <span
+					class="nav-text"> Statistics </span>
+			</a></li>
+			<li><a href="#"> <i class="fa fa-map-marker fa-2x"></i> <span
+					class="nav-text"> Maps </span>
+			</a></li>
+		</ul>
+
+		<ul class="logout">
+			<li><a href="#"> <i class="fa fa-power-off fa-2x"></i> <span
+					class="nav-text"> Logout </span>
+			</a></li>
+		</ul>
+	</nav>
+	<table>
+		<tr>
+			<td>
+				<div class="card">
+					<p>모의 토토</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="card">
+					<p>
+						<table>
+    						<thead>
+ 	       						<tr>
+    	        					<th>Rank</th>
+        	    					<th>Item Name</th>
+            						<th>Status</th>
+        						</tr>
+    						</thead>
+  							<tbody>
+        						<tr>
+            						<td>
+              							<div class="rank">1</div>
+              							<div class="draganddrop"></div>
+            						</td>
+            						<td class="name">
+              							Item Name
+            						</td>
+            						<td class="status in-progress">
+              							in-progress
+            						</td>
+        						</tr>
+        						<tr>
+            						<td>
+              							<div class="rank">2</div>
+              							<div class="draganddrop"></div>
+            						</td>
+            						<td class="name">
+              							Item Name
+            						</td>
+            						<td class="status in-progress">
+              							in-progress
+            						</td>
+        						</tr>
+        						<tr>
+            						<td>
+              							<div class="rank">3</div>
+              							<div class="draganddrop"></div>
+            						</td>
+            						<td class="name">
+              							Item Name
+            						</td>
+            						<td class="status open">
+              							open
+            						</td>
+        						</tr>
+        						<tr>
+            						<td>
+              							<div class="rank">1</div>
+              							<div class="draganddrop"></div>
+            						</td>
+            						<td class="name">
+              							Item Name
+            						</td>
+            						<td class="status overdue">
+              							overdue
+            						</td>
+        						</tr>
+    						</tbody>
+						</table>
+					</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div id="chat-circle" class="btn btn-raised">
+		<div id="chat-overlay"></div>
+		<i class="fa fa-comments fa-2x chatIcon"></i>
+	</div>
+
+	<div class="chat-box">
+		<div class="chat-box-header">
+			ChatBot <span class="chat-box-toggle"><i class="fa fa-times"></i></span>
+		</div>
+		<div class="chat-box-body">
+			<div class="chat-box-overlay"></div>
+			<div class="chat-logs"></div>
+			<!--chat-log -->
+		</div>
+		<div class="chat-input">
+			<form>
+				<input type="text" id="chat-input" placeholder="Send a message..." />
+				<button type="submit" class="chat-submit" id="chat-submit">
+					<i class="material-icons">send</i>
+				</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

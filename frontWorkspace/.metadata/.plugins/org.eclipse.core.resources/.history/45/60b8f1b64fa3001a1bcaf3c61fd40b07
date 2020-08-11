@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{ 
+		width: 65px; 
+		height: 65px; 
+		background: orange; 
+		position: relative; /*animate에서 핵심*/
+		}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$('img').animate({left:'300px'}, 'fast'); 
+	//왼쪽의 간격을 300px만큼 주어라 => 결론적으로 오른쪽으로 300px만큼 가게 됨.
+	$('img').animate({left:'100px', width:'+200px'}, 'slow');
+	//왼쪽의 간격을 100px만큼 주어라 => 결론적으로 왼쪽으로 100px만큼 가게 됨.
+	//그러면서 동시에 폭을 200px로 변하게 함. 
+
+	$('img').animate({width:'50px'}, 'slow');
+	//폭을 50px로 변하게 함
+	$('img').animate({height:'100px'}, 'slow');
+	//높이를 100px만큼 변하게 함.
+
+	$('img').animate({top:'200px'}, 'fast');
+	//위의 간격을 200px만큼 주어라
+	$('img').animate({top:'50px'}, 'slow');
+	//위의 간격을 50px만큼 주어라
+	
+	//right와 bottom은 없음
+	
+	//1. 5초 뒤에 앵그리버드가 사라지도록... 앵그리버드 숨었다... 팝업창으로 출력
+	/*setTimeout(function(){
+		$('img').hide();
+		alert("앵그리버드 숨었다.");
+	}, 5000);
+	
+	//1. 7초 뒤에 다시 나타나도록... 팝업창 띄우고..."두두두두~ 짜잔"
+	setTimeout(function(){
+		$('img').show();
+		alert("두두두두~ 짜잔");
+	}, 7000);
+});*/
+</script>
+</head>
+<body>
+	<img src="../image/redbird.png">
+</body>
+</html>

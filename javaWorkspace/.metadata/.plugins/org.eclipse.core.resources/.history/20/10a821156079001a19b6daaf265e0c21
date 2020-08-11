@@ -1,0 +1,12 @@
+package self.test;
+
+import self.Programmer;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Programmer person1 = new Programmer("Diana", 500, "Java", MyDate(1990, 10, 22));
+
+	}
+
+}

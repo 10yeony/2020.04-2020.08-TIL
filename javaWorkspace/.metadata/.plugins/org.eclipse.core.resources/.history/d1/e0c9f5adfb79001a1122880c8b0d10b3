@@ -1,0 +1,16 @@
+package condition.test;
+/*
+ * 제어문이란?
+ * 주어진 조건이 참일 때만 해당 코드 블록을 수행함.
+ * 문장의 흐름을 제어함으로써 좀 더 정교한 프로그램이 만들어질 수 있다.
+ * ::
+ * if/else if/else
+ */
+public class ifGradeTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

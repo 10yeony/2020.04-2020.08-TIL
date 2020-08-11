@@ -1,0 +1,22 @@
+package step3.test;
+
+import service.ProductStoreService;
+import vo.Product;
+
+public class ProductStoreServiceTestt {
+
+	public static void main(String[] args) {
+		ProductStoreService service = new ProductStoreService();
+		
+		Product[ ] pros = {
+				new Product("HP", 120000, 2),
+				new Product("SAMSUNG", 230000, 3),
+				new Product("LG", 500000, 13)		
+		};
+		
+		System.out.println("1. 모든 상품의 maker를 출력합니다...");
+		service.printAllProductMaker(pros);
+
+	}
+
+}

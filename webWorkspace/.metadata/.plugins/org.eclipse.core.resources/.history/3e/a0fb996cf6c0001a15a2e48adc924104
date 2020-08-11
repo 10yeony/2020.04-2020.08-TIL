@@ -1,0 +1,45 @@
+package practice;
+
+import java.util.Arrays;
+
+class Solution{
+    public int[] reverseSort(int[] candles) {
+		Arrays.sort(candles);
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i<candles.length; i++) {
+			sb.append(Integer.toString(candles[i]));
+		}
+		String str = sb.reverse().toString();
+		for(int i=0; i<candles.length; i++) {
+			candles[i] = Integer.parseInt(str.substring(i, i+1));
+		}
+		return candles;
+	}
+    
+    public int solution(int[] candles){
+        int num = 0;
+    	boolean flag = true;
+    	for(int i=0; i<candles.length; i++) {
+    		candles = reverseSort(candles);
+    		for(int j=0; j<=i; j++) {
+    			if(candles[j]==0) {
+    				flag = false;
+    				break;
+    			}
+    			candles[j] -= 1;
+    		}
+    		if(flag==true) num++;
+    		else break;
+    	}
+        return num;
+    }
+}
+
+public class CT1 {
+	
+	public static void main(String[] args) {
+		Solution sl = new Solution();
+		int[] candles = {100};
+		System.out.println(sl.solution(candles));
+	}
+}

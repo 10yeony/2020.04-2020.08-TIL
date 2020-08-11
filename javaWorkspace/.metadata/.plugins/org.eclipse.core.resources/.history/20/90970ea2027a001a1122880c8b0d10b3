@@ -1,0 +1,12 @@
+package condition.test;
+/*
+ * Math.random()와 함께
+ * switch문에서의 break 키워드에 대해서 살펴보자.
+ */
+public class SwitchNoBreakTest {
+	public static void main(String[] args) {
+		
+
+	}
+
+}

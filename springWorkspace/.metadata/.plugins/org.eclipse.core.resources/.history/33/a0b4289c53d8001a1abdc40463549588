@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="itemMapper">
+	<resultMap type="item" id="itemSelect">
+		<result property="itemNumber" column="item_id"/>
+		<result property="name" column="item_name"/>
+		<result property="price" column="price"/>
+		<result property="description" column="description"/>
+		<result property="url" column="picture_url"/>
+		<result property="count" column="count"/>
+	</resultMap>
+	
+	<select id="getAllItem" resultType="item" resultMap="itemSelect">
+		SELECT 
+		item_id, item_name, price, description, picture_url, count
+		FROM item
+	</select>
+	
+	<select id="getItem" parameterType="int" resultType="item" resultMap="itemSelect">
+		SELECT 
+		item_id, item_name, price, description, picture_url, count
+		FROM item
+		WHERE item_id LIKE '%${value}%'
+	</select>
+	
+	<update id="updateRecordCount" parameterMap="int" resultType="int">
+		UPDATE item 
+		SET count=count+1 
+		WHERE item_id=${value}
+	</update>
+</mapper>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- 
+부트스트랩 그리드... grid
+화면을 하나의 row로 본다. 그리고 하나의 row는 12칸으로 구성!
+한줄은 기본적으로 12칸으로 구성되어져 있다는 맥락...
+예를 들어서 정확히 3등분 하고 싶다면... 
+<div class="col-sm-4"> 4, 4, 4
+
+디바이스 크기
+-가장 작은 크기(모바일) --너비 768px ==>xs
+-중간 크기(태블릿) --768 < 너비  ==> sm
+-중간 크기(노트북) -- 992px ==> md
+-가장 큰 크기(데스크탑) --1200px ==> lg
+*이거 안 해도 화면 해상도를 반응형으로 알아서 해줌.
+*하지만 이걸 정해주면 정확하게 어떤 화면을 기준으로 최적화할 것인지!
+ --> 
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div> -->
+    
+    <div class="col-lg-6">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-lg-6">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

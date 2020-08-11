@@ -1,0 +1,13 @@
+package condition.test;
+/*
+ * formating과 삼항 연산자
+ */
+
+public class ConditionTest6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

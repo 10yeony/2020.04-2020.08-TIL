@@ -1,0 +1,13 @@
+package condition.test;
+
+public class ConditionTest5 {
+
+	public static void main(String[] args) {
+		int dice = // 1~6 사이의 랜덤한 정수가 할당되도록
+		/*
+		 * 1이면 Dice1
+		 */
+
+	}
+
+}

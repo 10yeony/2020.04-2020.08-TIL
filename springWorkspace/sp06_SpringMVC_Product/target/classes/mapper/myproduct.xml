@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="ProductMapper">
+
+	<!-- 
+	id가 pk이고 auto_increasement인 경우
+	INSERT문에서 id 빼고 추가해주는데,
+	그러다 보면 vo 객체와 db의 row가 일치하지 않게 됨.(vo 객체의 id값이 비어있음)
+	그래서 INSERT문으로 추가해주고 SELECT문으로 가져와서 vo 객체에 id값 set해줘야 함.
+	그렇게 되면 번거롭고 비효율적임
+	
+	그래서 useGeneratedKeys="true"로 해주고
+	자동 생성되는 auto_increasement 값을 keyProperty="id" 해서 vo 객체의 id에 넣음.
+	 -->
+	<insert id="addProduct" parameterType="myProduct" useGeneratedKeys="true" keyProperty="id">
+		INSERT 
+		INTO myproduct (name, maker, price) 
+		VALUES(#{name}, #{maker}, #{price})
+	</insert>
+	
+	<!-- LIKE 연산자와 % 사용 -->
+	<select id="findByProductName" parameterType="string" resultType="myProduct">
+		SELECT 
+		id, name, maker, price 
+		FROM myproduct 
+		WHERE name LIKE '%${value}%'
+	</select>
+	
+	<select id="findProducts" resultType="myProduct">
+		SELECT 
+		id, name, maker, price 
+		FROM myproduct
+	</select>
+</mapper>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

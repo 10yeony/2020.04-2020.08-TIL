@@ -1,0 +1,20 @@
+package oop.greet.test;
+
+import java.util.Scanner;
+
+public class EncoreGreetTest2 {
+	public static void main(String[] args) { //실행 메소드
+		EncoreGreet en = new EncoreGreet(); 
+		
+		Scanner sc = new Scanner(System.in); 
+		System.out.println("이름을 입력하세요>>>>>");
+		en.name = sc.nextLine();
+		
+		System.out.println("메세지를 입력하세요>>>>>");
+		en.message = sc.nextLine();
+		
+		en.sayHello();
+
+	}
+
+}

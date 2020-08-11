@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>addClass() :: html 코드와 css 코드를 분리</title>
+<style>
+	.totalView{ color: orange }
+	.divP{ color: red }
+	.pFirst{ background: grey }
+	.paragraph{ border: 1px solid green }
+	.statement{ border: 1px solid blue }
+	.item{ border: 1px solid blue }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//굉장히 많이 쓰임.
+		$('h1, p').addClass('totalview');
+		$('div p').addClass('divP');
+		$('p:eq(0)').addClass('pFirst'); 
+		$('p#paragraph').addClass('paragraph');
+		$('p.statement').addClass('statement');
+		$('p.item').addClass('item');
+	});
+</script>
+</head>
+<body>
+<h1>What is jQuery</h1>
+<div>
+	<p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+</div>
+<p id="paragraph">It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. </p>
+<p class="statement">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+<p class="statement item">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+</body>
+</html>

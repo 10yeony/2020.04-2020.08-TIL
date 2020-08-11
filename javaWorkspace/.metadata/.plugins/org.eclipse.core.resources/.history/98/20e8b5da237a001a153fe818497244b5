@@ -1,0 +1,32 @@
+package array.test1;
+
+class ArrayExam{
+	String type = "배열";
+	public String type() {
+		return type;
+	}
+}
+
+public class ArrayBasicTest1 {
+	public static void main(String[] args) {
+		ArrayExam exam = new ArrayExam();
+		int[] arr = new int[3]; // 값이 3개 들어가는 통 만들었고 기본값 0, 0, 0
+
+		/*for(int i=0; i<arr.length; i++) { //length()가 아니다. 함수가 아니라 필드!
+			System.out.print("Default Value :: " + arr[i] + "/ "); // println 하면 다음 줄에 찍힘
+		}*/
+		
+		System.out.println("======Default Value========");
+		// 자바에서는 향상된 for문으로 더 많이 쓴다. 뭐가 어디 안에서 돌아가는가?
+		for(int val : arr) { // 배열 arr 안에 있는 값들이 val에 할당됨
+			System.out.print(val + " ");		
+		}
+
+		System.out.println("\n" + exam); // array.test1 패키지에 있는 ArrayExam 클래스 주소값이 @ 뒤에 있는 값
+		System.out.println("\n" + exam.toString());
+		// 
+		
+		System.out.println(arr); // 
+	}
+
+}

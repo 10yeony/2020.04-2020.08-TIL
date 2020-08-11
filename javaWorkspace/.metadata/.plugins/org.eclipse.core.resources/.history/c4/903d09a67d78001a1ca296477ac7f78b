@@ -1,0 +1,15 @@
+package oop.javadoc.test;
+/*
+ * main() 가지고 실행을 하는 실행 클래스
+ * 실행...
+ * JavaComment 객체를 생성 == 메모리에 올린다. == 식구(Member-Field, Method)가 메모리에 올라간다
+ */
+
+public class JavaCommentTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

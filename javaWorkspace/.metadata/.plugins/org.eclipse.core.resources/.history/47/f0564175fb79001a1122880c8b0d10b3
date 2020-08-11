@@ -1,0 +1,12 @@
+package condition.test;
+/*
+ * 주어진 조건이 참일 때만 해당 코드 블록을 수행함.
+ */
+public class ifGradeTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

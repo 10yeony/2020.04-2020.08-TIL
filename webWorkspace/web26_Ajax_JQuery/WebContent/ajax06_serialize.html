@@ -1,0 +1,79 @@
+<!-- 
+굉장히 많이 쓰임 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('#regBtn').click(function(){
+			$.ajax({
+				type:'post',
+				url:'SerialAjax',
+				data:$('#frm').serialize(), //모든 폼값이 통째로 다 넘어감
+					
+				success:function(data){
+					$('#regView').html(data).css({
+						'background':'yellow',
+						'font-weight':'bold',
+							'color':'blue'
+					});
+				}//callback
+			});//ajax
+		});//click
+		
+		/*
+		id가 4자~8자 사이의 값만 허용
+		이 안에 있는 값이 아니면... 메세지 띄운다.. return
+		
+		id가 4자~8자 사이의 값이면... ajax 사용
+		SerialAjax 요청
+		true == 사용불가...red
+		false == 사용가능 아이디...를 출력 blue
+		*/
+		$('#id').keyup(function(){
+			var id = $(this).val();
+			if(id.length<4 || id.length>8){
+				$('#idCheckView').html("4자~8자 사이의 id를 입력하세요").css('color','red');
+				return;
+			}else{
+				$.ajax({
+					type:'post',
+					url:'SerialAjax',
+					data:$('form[name=idFrm]').serialize(),
+					
+					success:function(data){
+						if(data=='true'){
+							$('#idCheckView').html(id+" :: 사용 불가!!").css('color','red');
+						}else{
+							$('#idCheckView').html(id+" :: 사용 가능!!").css('color','blue');
+						}
+					}
+				});//ajax	
+			}
+		});//keyup
+	});//ready
+</script>
+</head>
+<body>
+	<form action="SerialAjax" id="frm">
+		<h2>Register Form...</h2>
+		NAME <input type="text" name="name"> 
+		ADDR <input type="text" name="addr"> 
+		<input type="hidden" name="command" value="register"><p />
+		<input type="button" value="가입" id="regBtn">
+	</form>
+	<hr>
+	<div id="regView"></div>
+	<hr>
+	<form action="SerialAjax" name="idFrm">
+	<h2>Member ID Check...Test</h2>
+	ID <input type="text" name="id" id="id"><br/>
+	<span id="idCheckView"></span>
+	<input type="hidden" name="command" value="idCheck"><p />
+	</form>
+</body>
+</html>

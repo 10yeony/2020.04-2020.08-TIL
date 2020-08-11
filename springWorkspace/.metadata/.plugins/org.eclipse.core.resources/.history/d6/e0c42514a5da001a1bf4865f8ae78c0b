@@ -1,0 +1,8 @@
+package com.encore.spring.model;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class UploadDataVO {
+	private String userName;
+	private MultipartFile multipartFile;
+}

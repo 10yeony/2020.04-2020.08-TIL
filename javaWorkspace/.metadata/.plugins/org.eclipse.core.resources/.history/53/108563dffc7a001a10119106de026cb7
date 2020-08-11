@@ -1,0 +1,62 @@
+package workshop;
+
+import java.util.Scanner;
+
+public class Workshop2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("가위바위보 게임을 시작합니다. 아래 보기 중 하나를 고르세요.");
+			System.out.println("1. 5판 3승");
+			System.out.println("2. 3판 2승");
+			System.out.println("3. 1판 1승");
+			int choice = sc.nextInt();
+			int n = 0;
+			boolean result = false;
+			if (choice == 1) {
+				while (n < 5) {
+					if (result == true) {
+						break;
+					} else {
+						System.out.println("가위바위보 하나 중 입력: ");
+						String user = sc.next();
+						//RockPaperScissors roc = new RockPaperScissors();
+						//result = roc.game(user);
+						n++;
+					}
+				}
+			}
+			else if(choice == 2) {
+				
+			}
+			else if(choice == 3) {
+				
+			}
+			else {
+				
+			}
+		}
+	}
+	
+	public static void rockpaperscissors(String user) {
+		int userWin = 0; int comWin = 0;
+		int com = (int) (Math.random() * 3); // 컴퓨터가 0~2 랜덤 선택
+		String[] arr = { "가위", "바위", "보" };
+		if (user.equals(arr[com])) {
+			System.out.println("사용자 : " + user + ", 컴퓨터 : " + arr[com] + ", 비겼습니다!!!");
+		} else if (user.equals("가위") && arr[com].equals("보")) {
+			System.out.println("사용자 : " + user + ", 컴퓨터 : " + arr[com] + ", 이겼습니다!!!");
+			userWin += 1;
+		} else if (user.equals("바위") && arr[com].equals("가위")) {
+			System.out.println("사용자 : " + user + ", 컴퓨터 : " + arr[com] + ", 이겼습니다!!!");
+			userWin += 1;
+		} else if (user.equals("보") && arr[com].equals("바위")) {
+			System.out.println("사용자 : " + user + ", 컴퓨터 : " + arr[com] + ", 이겼습니다!!!");
+			userWin += 1;
+		} else {
+			System.out.println("사용자 : " + user + ", 컴퓨터 : " + arr[com] + ", 졌습니다!!!");
+			comWin += 1;
+		}
+	}
+}

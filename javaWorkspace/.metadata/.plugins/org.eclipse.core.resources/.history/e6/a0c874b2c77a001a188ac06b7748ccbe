@@ -1,0 +1,12 @@
+package array.test2;
+
+public class ArrayMaxAndMinTest2 {
+
+	public static void main(String[] args) {
+		int[ ] score = {79,88,91,44,100,55,95};
+		
+		int min = score[0];
+
+	}
+
+}

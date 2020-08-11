@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="sp06_SpringMVC_Product"/>
+<aop-project name="sp02_Core2_Dice"/>
+<aop-project name="SpringTest"/>
+<aop-project name="sp04_MyBatis"/>
+<aop-project name="sp10_SpringMVC_MultiFile"/>
+<aop-project name="sp08_SpringMVC_ViewResolver"/>
+<aop-project name="sp01_Core1_DI"/>
+<aop-project name="sp11_SpringMVC_Ajax"/>
+<aop-project name="sp07_SpringMVC_Fruits"/>
+<aop-project name="sp09_SpringMVC_FileUpload"/>
+<aop-project name="sp12_SpirngMVC_Register"/>
+<aop-project name="sp05_SpringMVC_sample"/>
+</aop-reference-model>

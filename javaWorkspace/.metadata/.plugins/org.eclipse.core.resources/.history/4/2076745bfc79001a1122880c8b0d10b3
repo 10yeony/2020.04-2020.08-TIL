@@ -1,0 +1,17 @@
+package condition.test;
+/*
+ * 제어문이란?
+ * 주어진 조건이 참일 때만 해당 코드 블록을 수행함.
+ * 문장의 흐름을 제어함으로써 좀 더 정교한 프로그램이 만들어질 수 있다.
+ * ::
+ * if(boolean expression) / else if(boolean expression) / else
+ * switch~case
+ */
+public class ifGradeTest1 {
+	public static void main(String[] args) {
+		int grade = 87;
+		
+
+	}
+
+}

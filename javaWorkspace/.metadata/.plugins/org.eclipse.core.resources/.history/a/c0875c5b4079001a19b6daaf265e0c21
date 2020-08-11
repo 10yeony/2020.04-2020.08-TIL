@@ -1,0 +1,14 @@
+package oop.encapsulation.test;
+
+import oop.encapsulation.MyDate;
+
+public class MyDateTest1 {
+
+	public static void main(String[] args) {
+		MyDate md = new Mydate();
+		md.month = 13;
+		md.day = 33;
+
+	}
+
+}

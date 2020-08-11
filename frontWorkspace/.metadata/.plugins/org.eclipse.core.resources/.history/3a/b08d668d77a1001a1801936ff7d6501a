@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<style type="text/css">
+	.poster{ width: 150px; height: 150px; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	refreshPage();
+
+	//미래에 생성된 것들에는 click()이 아니라 on() 써야 함. 어쩌다 먹더라도 on()이 맞음.
+	//선택자 버튼으로 하면 안 되고 버튼의 부모로 해야 함!
+	//클릭이벤트가 적용되는 컴포넌트로 버튼 id 넣어줌.
+	$('#content').on('click', '#deleteCart')
+});
+
+function refreshPage(){
+	var html = '';
+	var totalPrice = 0;
+	
+	//localStorage에서 저장된 모든 내용을 받아와서...
+	//아랫 부분에 있는 table 안에 적절한 위치에 출력...
+	for(var key in localStorage){
+		//alert(key);
+		if(key=='length') break; //로컬스토리지에 키가 없을 때
+		var data = localStorage.getItem(key).split(","); //aaa,sss,ddd
+		html += '<tr><td><img class=poster src='+data[1]+'></td>';
+		html += '<td>'+key+'</td>';
+		html += '<td>'+data[0]+'</td>';
+		html += '<td>'+data[2]+'</td>';
+		html += '<td><button id=deleteCart value='+key+'>삭제</button></td></tr>';
+		
+		totalPrice += parseInt(data[2]);
+	}
+	$('#content').html(html);
+	$('#price').html("주문 가격 : "+totalPrice);
+}
+</script>
+</head>
+<body>
+<article class="main">
+		<section>
+			<table width="80%"  align="center"  >
+			<caption class="caption">찜 리스트</caption>
+			<thead>
+				<tr><th>이미지</th><th>상품번호</th><th>상품이름</th><th>가격</th><th>삭제</th></tr>
+			</thead>
+			<tbody id="content">
+			</tbody>
+			</table>
+		</section>
+		<section  class="toalprice" id="price">
+			
+		</section>
+		<section class="link">
+			<table   align="center">
+			<tr><td align="center">
+				<a href="">주문하러 가기</a> 
+				<a href="index.html">DVD 목록</a> 
+			</td></tr>
+			</table>
+		</section>
+		</article>
+</body>
+</html>

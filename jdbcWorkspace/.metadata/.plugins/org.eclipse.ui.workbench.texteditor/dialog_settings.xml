@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="완치" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="완치"/>
+			<item value="사망하면"/>
+			<item value="row_number"/>
+			<item value="row"/>
+			<item value="ntile"/>
+			<item value="rank"/>
+			<item value="일일확진자수"/>
+			<item value="트랜잭션"/>
+			<item value="append"/>
+			<item value="확진자가 입원"/>
+			<item value="invalid"/>
+			<item value="autocommit"/>
+			<item value="add"/>
+			<item value="hospital"/>
+			<item value="local"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="393" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="523" key="DIALOG_HEIGHT"/>
+		<item value="1125" key="DIALOG_X_ORIGIN"/>
+		<item value="189" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

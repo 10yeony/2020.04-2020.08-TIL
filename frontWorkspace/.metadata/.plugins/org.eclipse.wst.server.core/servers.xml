@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="C:\kyh\apache-tomcat-8.5.55\webapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="120" stop-timeout="15" testEnvironment="false" timestamp="16">
+    <list key="modules" value0="HTML5::org.eclipse.jst.jee.server:HTML5::jst.web::3.1" value1="CSS3::org.eclipse.jst.jee.server:CSS3::jst.web::3.1" value2="JavaScript::org.eclipse.jst.jee.server:JavaScript::jst.web::3.1" value3="jQuery::org.eclipse.jst.jee.server:jQuery::jst.web::3.1" value4="BootStrap::org.eclipse.jst.jee.server:BootStrap::jst.web::3.1" value5="jQueryUI::org.eclipse.jst.jee.server:jQueryUI::jst.web::3.1" value6="SummaryWorkshop::org.eclipse.jst.jee.server:SummaryWorkshop::jst.web::3.1"/>
+  </server>
+</servers>

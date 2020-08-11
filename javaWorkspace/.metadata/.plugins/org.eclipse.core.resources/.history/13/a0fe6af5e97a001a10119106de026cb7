@@ -1,0 +1,17 @@
+package step2.test;
+
+import vo.Product;
+
+public class PersonArrayTest {
+
+	public static void main(String[] args) {
+		// 1. 배열의 생성과 초기화를 한번에...
+		Product[ ] pros = {
+				new Product("HP", 120000, 2),
+				new Product("SAMSUNG", 230000, 3),
+				new Product("LG", 500000, 13)		
+		};
+
+	}
+
+}

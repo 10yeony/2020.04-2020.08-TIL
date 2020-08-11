@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+File Upload 폼 작성시 주의사항
+1) form 태그를 이용하자... a 태그는 사용 못함
+2) 전송방식은 반드시 post로 한다... | 단순한 스트링값을 넘기는 게 아니라 MultipartFile 객체를 넘기는 것이다.
+ -->
+</head>
+<body>
+<h2 align="center">Single File Upload Test...</h2>
+<form action="fileUpload.do">
+
+</form>
+<hr>
+<a href="fileUpload.do"></a>
+</body>
+</html>

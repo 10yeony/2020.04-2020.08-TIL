@@ -1,0 +1,13 @@
+package com.encore.spring;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MyBatisJunitTest2 {
+	@Test
+	public void unit() throws Exception{
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+								new String[] {"/config/userservice13.xml"});
+	}
+}

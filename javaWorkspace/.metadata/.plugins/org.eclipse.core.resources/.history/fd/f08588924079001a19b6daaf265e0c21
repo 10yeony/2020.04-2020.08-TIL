@@ -1,0 +1,15 @@
+package oop.encapsulation.test;
+
+import oop.encapsulation.MyDate;
+
+public class MyDateTest1 {
+
+	public static void main(String[] args) {
+		MyDate md = new Mydate();
+		//필드에 직접적으로 값을 할당
+		md.month = 13;
+		md.day = 33;
+
+	}
+
+}

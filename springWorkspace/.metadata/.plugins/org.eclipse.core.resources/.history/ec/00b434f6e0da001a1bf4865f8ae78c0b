@@ -1,0 +1,47 @@
+package com.encore.spring;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.encore.spring.domain.Member;
+
+public class MyBatisJunitTest1 {
+	@Test
+	public void unit() throws Exception{
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		SqlSession session = factory.openSession();
+		
+		Member vo;
+		
+		/* registerMember */
+		//vo = new Member("id1234", "pwd1234", "이름", "주소");
+		//session.insert("MemberMapper.registerMember", vo);
+		//session.commit();
+		
+		/* updateMember */
+		//vo = new Member("11", "수정_1234", "수정_1234", "수정_1234");
+		//session.update("MemberMapper.updateMember", vo);
+		//session.commit();
+		
+		/* findMember */
+		vo = session.selectOne("MemberMapper.findMember", "11");
+		System.out.println(vo);
+		
+		/* viewAllMember */
+		List<Member> list = session.selectList("MemberMapper.viewAllMember");
+		for(Member i : list) {
+			System.out.println(i);
+		}
+		
+		System.out.println("===============================================");
+		
+	}
+}

@@ -1,0 +1,40 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+class Solution{
+	
+    public int solution(int n, String[] actions){
+    	HashMap<String, ArrayList<String>> map = new HashMap<>();
+    	ArrayList<String> list = new ArrayList<>();
+    	list.add("0"); //바닥에 있음
+    	for(int i=1; i<=n; i++) {//1~n까지 초기화
+    		map.put(Integer.toString(i), list);
+    	}
+    	for(int i=0; i<actions.length; i++) {
+    		String[] temp = actions[i].split(" ");
+    		if(temp[0].equals("PUT")){
+    			list
+    			map.put(temp[3], temp[1]);
+    		}
+    		else if(temp[0].equals("SET")){
+    			
+    		}
+    		else if(temp[0].equals("SWAP")){
+    			
+    		}
+    	}
+    	return 0;
+    }
+}
+
+public class CT1 {
+	
+	public static void main(String[] args) {
+		Solution sl = new Solution();
+		int[] candles = {1,1,2,0};
+		System.out.println(sl.solution(candles));
+	}
+}

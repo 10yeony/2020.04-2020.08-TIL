@@ -1,0 +1,23 @@
+package self;
+
+public class Programmer {
+	private String name;
+	private int salary;
+	private String tech;
+	public MyDate birthDate;
+	
+	public Programmer(String name, int salary, String tech, public MyDate birthDate) {
+		super();
+		this.name = name;
+		this.salary = salary;
+		this.tech = tech;
+		this.birthDate = birthDay;
+	}
+	
+	public NoteBook noteBook;
+	public Programmer(NoteBook noteBook) {
+		super();
+		this.noteBook = noteBook;
+	}
+	
+}

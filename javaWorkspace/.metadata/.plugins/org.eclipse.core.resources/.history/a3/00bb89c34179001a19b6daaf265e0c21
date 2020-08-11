@@ -1,0 +1,19 @@
+package oop.encapsulation.test;
+
+import oop.encapsulation.MyDate;
+
+public class MyDateTest1 {
+
+	public static void main(String[] args) {
+		MyDate md = new Mydate();
+		//필드에 직접적으로 값을 할당. 
+		
+		md.setMonth(13);
+		System.out.println(md.getMonth);
+		
+		/*md.month = 13;
+		md.day = 33; // 이렇게 잘못된 값이 들어갈 수 있음.
+		// 그래서 MyDate에 있는 필드 앞에 private 붙여주면 필드가 not visible하다고 하며 접근 막힘 */
+	}
+
+}

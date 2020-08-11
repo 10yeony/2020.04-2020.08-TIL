@@ -1,0 +1,30 @@
+package condition.test;
+
+import java.util.Scanner;
+
+/*
+ * 등급에 따라서
+ * 해당되는 case문이 실행되도록 로직 작성...
+ * 이전에 실행시 값으로 성적을 입력받았다면
+ * 등급을 입력받도록 로직을 수정...
+ */
+public class SwitchGradeTest3 {
+	public static void main(String[] args) {
+		// 성적에 따른 Grade를 제어하는 문장을 작성...
+		for (;;) {
+			System.out.println("당신의 성적과 등급을 입력하세요 >>>>>");
+			Scanner sc = new Scanner(System.in);
+			String rank = sc.nextLine();
+			String name = sc.nextLine();
+			switch(rank) {
+			case "A" : System.out.println(name + "님 : " + "90~100점"); break;
+			case "B" : System.out.println(name + "님 : " + "80~89점"); break;
+			case "C" : System.out.println(name + "님 : " + "70~79점"); break;
+			case "D" : System.out.println(name + "님 : " + "60~69점"); break;
+			case "F" : System.out.println(name + "님 : " + "0~59점"); break;
+			default : System.out.println(name + "님, 다시 입력해주세요.");
+			}
+		}
+	}
+
+}

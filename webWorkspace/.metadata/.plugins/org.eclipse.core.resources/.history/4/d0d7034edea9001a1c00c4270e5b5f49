@@ -1,0 +1,61 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="servlet.model.BookVO"%>
+<%@page import="servlet.model.BookDAOImpl"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{
+		border-collapse: collapse;
+	}
+	table th, td{
+		border: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<table>
+	<tr>
+		<th>도서번호</th>
+		<th>도서제목</th>
+		<th>도서종류</th>
+		<th>출판국가</th>
+		<th>출판일</th>
+		<th>출판사</th>
+		<th>저자</th>
+		<th>도서가격</th>
+		<th>요약내용</th>
+	</tr>
+	<%
+	ArrayList<BookVO> bList = BookDAOImpl.getInstance().showAllBook();
+	for(int i=0; i<bList.size(); i++){
+		String isbn = bList.get(i).getIsbn();
+		String title = bList.get(i).getTitle();
+		String catalogue = bList.get(i).getCatalogue();
+		String nation = bList.get(i).getNation();
+		String publishDate = bList.get(i).getPublishDate();
+		String publisher = bList.get(i).getPublisher();
+		String author = bList.get(i).getAuthor();
+		String price = bList.get(i).getPrice();
+		String currency = bList.get(i).getCurrency();
+		String description = bList.get(i).getDescription();
+	%>
+	<tr>
+		<td><%=isbn %></td>
+		<td><%=title %></td>
+		<td><%=catalogue %></td>
+		<td><%=nation %></td>
+		<td><%=publishDate %></td>
+		<td><%=publisher %></td>
+		<td><%=author %></td>
+		<td><%=price %><%=currency %></td>
+		<td><%=description %></td>
+	</tr>
+	<%} %>
+</table>
+</body>
+</html>

@@ -1,0 +1,9 @@
+package vo;
+
+public class Person {
+	private String maker;
+	private int price;
+	private int count;
+	
+	
+}

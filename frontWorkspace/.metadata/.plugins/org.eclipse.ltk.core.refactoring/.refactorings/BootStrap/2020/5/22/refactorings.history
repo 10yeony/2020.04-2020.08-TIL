@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BootStrap/WebContent/bs03_caroucel.html&apos; to &apos;bs03_carousel.html&apos;" description="Rename resource &apos;bs03_caroucel.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/bs03_caroucel.html" name="bs03_carousel.html" stamp="1590721278029" updateReferences="true"/>
+</session>

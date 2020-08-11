@@ -1,0 +1,60 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Solution{
+    public int solution(int a, int b, int range){
+        int total=0;
+        for(int i=1; i<range+1; i++){
+            if(i%a==0 || i%b==0){
+                total+=i;
+            }
+        }
+        return total;
+    }
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int w = sc.nextInt(); //가로
+		int h = sc.nextInt(); //세로
+		int[] wArr = new int[w];
+		int[] hArr = new int[h];
+		wArr[wArr.length-1] = w;
+		hArr[hArr.length-1] = h;
+		
+		int n = sc.nextInt(); //횟수
+		for(int i=0; i<n; i++) {
+			int wh = sc.nextInt(); //가로인지 세로인지
+			int line = sc.nextInt(); //줄 번호
+			
+			if(wh==0) {//가로구분선이라면(직사각형 세로에 영향)
+				hArr[line-1] = line;
+			}
+			if(wh==1) {//세로구분선이라면(직사각형 가로에 영향)
+				wArr[line-1] = line;
+			}
+		}
+		
+		int maxW = 1; //가로 최댓값
+		int maxH = 1; //세로 최댓값
+		for(int i=w-1; i>0; i--) {
+			if(maxW < wArr[i]-wArr[i-1]) {
+				maxW = wArr[i]-wArr[i-1];
+				System.out.println(maxW);
+			}
+		}
+		for(int i=h-1; i>0; i--) {
+			if(maxH < hArr[i]-hArr[i-1]) {
+				maxH = hArr[i]-hArr[i-1];
+				System.out.println(maxH);
+			}
+		}
+		
+		System.out.println(maxW * maxH);
+	}
+}

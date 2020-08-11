@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Aug 10 22:19:23 KST 2020
+org.eclipse.jst.jee.server\:sp12_SpirngMVC_Register=C\:\\kyh\\apache-tomcat-8.5.56\\webapps\\sp12_SpirngMVC_Register
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\10yeo\\.m2\\repository\\org\\springframework\\spring-web\\4.1.1.RELEASE\\spring-web-4.1.1.RELEASE.jar=C\:\\kyh\\apache-tomcat-8.5.56\\webapps\\sp12_SpirngMVC_Register\\WEB-INF\\lib\\spring-web-4.1.1.RELEASE.jar

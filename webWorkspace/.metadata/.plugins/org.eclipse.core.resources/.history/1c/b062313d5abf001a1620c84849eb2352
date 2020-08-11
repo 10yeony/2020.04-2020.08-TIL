@@ -1,0 +1,31 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Solution{
+    public int solution(int a, int b, int range){
+        int total=0;
+        for(int i=1; i<range+1; i++){
+            if(i%a==0 || i%b==0){
+                total+=i;
+            }
+        }
+        return total;
+    }
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> wList = new ArrayList<>();
+		ArrayList<Integer> hList = new ArrayList<>();
+		wList.add(0);
+		hList.add(0);
+		Scanner sc = new Scanner(System.in);
+		int w = sc.nextInt();
+		int h = sc.nextInt();
+		wList.add(w);
+		wList.add(h);
+	}
+}

@@ -1,0 +1,11 @@
+package oop.constructor;
+
+public class Shirt {
+	public String maker;
+	public boolean longSleeved;
+	public char color;
+	
+	public String getDetails() {
+		return maker+", "+longSleeved+","+color;
+	}
+}

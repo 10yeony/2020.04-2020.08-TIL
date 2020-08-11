@@ -1,0 +1,6 @@
+package com.encore.spring.model;
+
+//MultipartFile + 기타 폼정보
+public class MultiFileVO {
+	
+}

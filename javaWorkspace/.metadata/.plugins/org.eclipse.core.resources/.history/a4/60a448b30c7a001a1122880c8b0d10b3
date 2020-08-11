@@ -1,0 +1,14 @@
+package condition.test;
+/*
+ * formating과 삼항 연산자
+ */
+
+public class ConditionTest6 {
+
+	public static void main(String[] args) {
+		String result = ""; // 로컬변수는 기본값이 없으므로 이렇게라도 초기화시켜야 함.
+		
+
+	}
+
+}

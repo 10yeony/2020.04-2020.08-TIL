@@ -1,0 +1,19 @@
+package self.test;
+
+class CatchAMouse{
+	public static String solv(int x, int y, int z) {
+		/*
+		 * ±¸Çö...
+		 * Math.abs()
+		 */
+		return "";
+	}
+}
+public class CatchAMoustTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

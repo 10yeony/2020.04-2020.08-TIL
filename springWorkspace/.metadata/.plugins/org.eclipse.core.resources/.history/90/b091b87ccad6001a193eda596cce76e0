@@ -1,0 +1,5 @@
+package ibatis.services.user;
+
+public interface UserService {
+
+}

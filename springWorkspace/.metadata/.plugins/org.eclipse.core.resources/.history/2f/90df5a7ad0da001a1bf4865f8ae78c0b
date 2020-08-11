@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var xhr;
+	function startRequest(){
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = callback; //응답이 되면 호출되므로 callback()으로 쓰지 않음.
+		xhr.open("get", "SearchId.do");
+		xhr.send(null); //get 방식이라서 객체 담겨져서 안 날아감...
+	}
+	
+	//응답하는 코드 부분의 로직
+	function callback(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				var jsonData = JSON.parse(xhr.responseTest);
+				alert(jsonData);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<h2>비동기통신...Ajax...Json을 이용</h2>
+<a href="insert.do">동기통신</a><p>
+<input type="button" value="비동기통신" onclick="startRequest()">
+</body>
+</html>

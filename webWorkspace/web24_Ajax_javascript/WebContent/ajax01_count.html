@@ -1,0 +1,62 @@
+<!-- 
+readyState 알아야 함.준비 단계를 값으로 표현함.
+1. XMLHttpRequest() 생성 --- 상태 0
+2. onreadystatechange --- 상태 0
+3. open() --- 상태 1
+     서버와 연결이 이루어지는 단계(서블릿 이름을 집어넣으므로 서버와 실질적인 연결이 일어남)
+     이때부터 서버와 클라이언트 비동기적으로 연결
+4. send() --- 여전히 1
+서버까지 갔다가 돌아오는 과정은 2, 3
+readyState가 4라는 건 응답이 브라우저까지 잘 도착했다!
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var xhr; //요청함수, 응답함수 둘 다 써야 하므로 전역변수로 선언.
+	function startRequest(){//요청에 해당하는 로직을 담는 메소드..
+		//비동기 통신을 하려면 아래 자바스크립트 내장객체를 만들어야 함.
+		xhr = new XMLHttpRequest(); //필드와 메소드
+		//alert(xhr); 
+		//alert(xhr.readyState); //0
+		
+		xhr.onreadystatechange = callback; 
+		//onreadystatechange : 서블릿에서 응답할 때 응답을 받을 함수 등록.
+		//실행시키는 게 아니라 할당해주는 것이므로 callback() 해주면 안 됨. 
+		//지금은 콜하는 게 아니라 등록만 해놓고 때가 되면 호출할 것임.
+		//alert(xhr.readyState); //0
+		xhr.open("get", "CountServlet?id=ajax&&pass=1212", true); 
+		//요청을 어떤 방식으로 할지, 요청을 받을 서블릿의 이름, 비동기할건지(생략가능)
+		//여기까지 지정만 한 것. 실제 요청이 들어가려면... 아래 send 해줘야 함.
+		//alert("xhr....");
+		//alert(xhr.readyState); //1
+		
+		xhr.send(null); //이때 서버로 날아간다... 실질적인 요청이 들어간다.
+		//get 방식은 아무것도 안 담아서 간다. 주소창에 붙여서 간다. 그래서 null...
+		//post 방식일 때는 Key, Value 페어링해서 넣음.(post라고 해놓고 get으로 보내도 보내지긴 함.)
+	}
+	function callback(){//응답에 해당하는 로직을 담는 메소드...
+		//alert(xhr.readyState); // 1->2->3->4
+		if(xhr.readyState==4){//
+			if(xhr.status==200){//성공 Status Code
+				var text = xhr.responseText; 
+			    //서버에서 받아오는 게 XML일 경우 responseXML.
+			    //객체로 제일 많이 받는데, json
+			    //이렇게 json 형태로 받는 서비스가 restful 서비스
+				document.getElementById('resultView').innerHTML = 
+					"<h4><font color=blue>"+text+"</font></h4>";
+			}
+		}	
+	}
+</script>
+</head>
+<body>
+<h2>Show Count</h2>
+<!-- startRequest() Ajax에도 있는 함수명. convention으로 많이 씀. 요청이 시작된다... -->
+<input type="button" value="count 증가" onclick="startRequest()">
+<p></p>
+<span id="resultView"></span>
+</body>
+</html>

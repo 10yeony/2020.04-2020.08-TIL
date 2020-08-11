@@ -1,0 +1,18 @@
+package com.encore.spring;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.encore.spring.model.impl.MemberDAOImpl;
+
+public class MyBatisJunitTest2 {
+	@Test
+	public void unit() throws Exception{
+		ApplicationContext context =
+				new ClassPathXmlApplicationContext(
+								new String[] {"/config/userservice13.xml"});
+		MemberDAOImpl dao = new MemberDAOImpl();
+		System.out.println(dao.findMember("11"));
+	}
+}

@@ -1,0 +1,53 @@
+package workshop;
+
+import java.util.Scanner;
+
+class RockPaperScissors {
+	public String game(String user, String com) {  
+		if(user == com) {
+			return "비겼습니다!!!";
+		}
+		else if(user == "가위" && com == "보") {
+			return "이겼습니다!!!";
+		}
+		else if(user == "바위" && com == "가위") {
+			return "이겼습니다!!!";
+		}
+		else if(user == "보" && com == "바위") {
+			return "이겼습니다!!!";
+		}
+		else {
+			return "졌습니다!!!";
+		}
+	}
+}
+
+public class Workshop2 {
+
+	public static void main(String[] args) {
+		int choice; int random; String com; String user; int run = 0;
+		while(run == 0) {
+			random = (int)(Math.random()*3)+1;
+			switch (random) {
+			case 1 : com = "가위"; 
+			case 2 : com = "바위";
+			case 3 : com = "보";
+			}
+			Scanner sc = new Scanner(System.in);
+			System.out.println("가위바위보 게임을 시작합니다. 아래 보기 중 하나를 고르세요.");
+			System.out.println("1. 5판 3승");
+			System.out.println("2. 3판 2승");
+			System.out.println("3. 1판 1승");
+			choice = sc.nextInt();
+			if (choice == 1) {
+				
+			}
+			if (choice == 2) {
+				
+			}
+			user = sc.nextLine();
+			
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package step1.test;
+
+public class PersonArrayTest {
+
+	public static void main(String[] args) {
+		//1. Person 타입의 배열을 선언... 생성... 이름은 p 사이즈는 3
+		Person[ ] p = new Person[3];
+		
+		//2. 
+
+	}
+
+}

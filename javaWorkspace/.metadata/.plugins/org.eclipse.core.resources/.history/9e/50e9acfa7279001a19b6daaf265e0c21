@@ -1,0 +1,37 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Practice1 {
+
+	public static void main(String[] args) {
+		char grade = 'N';
+		System.out.println("성적을 입력하세요.");
+		Scanner sc = new Scanner(System.in);
+		int score = sc.nextInt();
+		if (score >= 90 && score <= 100) {
+				grade = 'A';
+				System.out.println("당신의 학점은 " + grade);
+			}
+			else if(score >= 80) {
+				grade = 'B';
+				System.out.println("당신의 학점은 " + grade);
+			}
+			else if(score >= 70) {
+				grade = 'C';
+				System.out.println("당신의 학점은 " + grade);
+			}
+			else if(score >= 60) {
+				grade = 'D';
+				System.out.println("당신의 학점은 " + grade);
+			}
+			else if(score >=0) {
+				grade = 'F';
+				System.out.println("당신의 학점은 " + grade);
+			}
+			else {
+				System.out.println("잘못 입력하셨습니다.");
+			}
+		}
+
+}

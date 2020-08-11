@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 
+컨트롤러가 수행한 후, 리턴되는 객체는 ModelAndView이다.
+ModelAndView에는 View 페이지 이름 + Model(Data) 정보가 담겨져 있다. 
+
+ -->
+
+</beans>

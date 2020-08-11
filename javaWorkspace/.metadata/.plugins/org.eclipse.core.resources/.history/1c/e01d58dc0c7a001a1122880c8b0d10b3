@@ -1,0 +1,18 @@
+package condition.test;
+
+import java.util.Random;
+
+/*
+ * formating과 삼항 연산자
+ */
+
+public class ConditionTest6 {
+
+	public static void main(String[] args) {
+		String result = ""; // 로컬변수는 기본값이 없으므로 이렇게라도 초기화시켜야 함.
+		Random = new Random(); // 이걸로 하면 math.random()보다 더 간단하게 쓸 수 있음.
+		
+
+	}
+
+}

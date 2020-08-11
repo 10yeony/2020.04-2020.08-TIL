@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jQueryUI/WebContent/ui02_datePicker.html&apos; to &apos;ui02_datepicker.html&apos;" description="Rename resource &apos;ui02_datePicker.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/ui02_datePicker.html" name="ui02_datepicker.html" stamp="1590729421912" updateReferences="true"/>
+</session>

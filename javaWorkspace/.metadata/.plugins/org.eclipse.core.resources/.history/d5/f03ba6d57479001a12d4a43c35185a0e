@@ -1,0 +1,14 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		int a = 5;
+		int b = 2;
+		int max = 0;
+		max = (a>b)? a: b;
+	}
+
+}

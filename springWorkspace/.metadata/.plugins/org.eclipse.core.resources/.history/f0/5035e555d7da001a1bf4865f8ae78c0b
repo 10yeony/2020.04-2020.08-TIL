@@ -1,0 +1,5 @@
+package com.encore.spring.model.impl;
+
+public class MemberDAO {
+
+}

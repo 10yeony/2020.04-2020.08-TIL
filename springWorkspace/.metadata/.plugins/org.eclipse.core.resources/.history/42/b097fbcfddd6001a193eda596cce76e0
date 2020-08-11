@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<!-- wiring. -->
+	<!-- ClassPathSystem으로 가므로, context:property-placeholder 꼭 넣어줘야 함 -->
+	<context:property-placeholder location="config/dbconn.properties"/>
+	
+	<!-- Bean 생성 -->
+	<!-- 1. DataSourc API Bean -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.mysql.driver}"/>
+		<property name="url" value="${jdbc.mysql.url}"/>
+		<property name="username" value="${jdbc.mysql.username}"/>
+		<property name="password" value="${jdbc.mysql.password}"/>
+	</bean>
+	
+	<!-- 2. SqlSessionFactory API Bean -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		
+	</bean>
+	
+	<!-- 3. SqlSession API Bean -->
+	
+	
+	<!-- 4. DAOImpl12 사용자 정의 Bean -->
+	
+	
+	<!-- 5. ServiceImpl12 사용자 정의 Bean -->
+	
+</beans>

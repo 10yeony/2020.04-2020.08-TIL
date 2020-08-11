@@ -1,0 +1,12 @@
+package oop.self.test;
+import oop.self.Programmer;
+public class ProgrammerTest {
+
+	public static void main(String[] args) {
+		Programmer pro = new Programmer();
+		System.out.println("정보를 출력합니다");
+	    pro.setProgrammer("Amily", 30, 200, 10);
+	    System.out.println(pro.getProgrammer());
+	}
+
+}

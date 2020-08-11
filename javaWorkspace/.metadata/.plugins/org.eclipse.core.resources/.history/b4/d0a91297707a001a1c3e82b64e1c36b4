@@ -1,0 +1,18 @@
+package workshop;
+
+import java.util.Scanner;
+
+public class Workshop1_1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int userNum = 0;
+		System.out.println("가위바위보 하나 중 입력: ");
+		String user = sc.next();
+		if (user == "가위") userNum = 1;
+		else if (user == "바위") userNum = 2;
+		else if (user == "보") userNum = 3;
+		System.out.println(userNum);
+	}
+
+}

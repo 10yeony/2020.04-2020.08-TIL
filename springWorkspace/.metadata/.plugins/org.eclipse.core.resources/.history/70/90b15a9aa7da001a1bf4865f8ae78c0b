@@ -1,0 +1,11 @@
+package com.encore.spring.model;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class UploadDataVO {
+	private String userName;
+	/* MultipartFile 변수명은 폼의 이름으로 일치시켜야 함!! 
+	 * <input type="file" name="uploadFile">
+	 * 중요!! 안 그러면 정보 저장이 안 됨. */
+	private MultipartFile uploadFile; 
+}

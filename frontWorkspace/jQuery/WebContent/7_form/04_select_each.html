@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	//누를 때마다 이벤트 가져오지 않고 한번만 작동하게 한다.
+	//1.
+	/*$('#addOptionBtn').on('click',function(){
+		var arr = ['하경','재은','해경','채은','미경','연희','소희'];
+		//1. each() 사용해서 배열 안의 친구들의 이름을 select>option 만들어서 붙임... apeend()
+		$(arr).each(function(index){
+			var option = '<option value='+arr[index]+'>'+arr[index]+'</option>';
+			$('#friend').append(option);
+		});//each
+		$(this).unbind();
+	});*/
+	
+	//2.
+	$('#addOptionBtn').one('click',function(){
+		var arr = ['하경','재은','해경','채은','미경','연희','소희'];
+		//1. each() 사용해서 배열 안의 친구들의 이름을 select>option 만들어서 붙임... apeend()
+		/*$(arr).each(function(index){
+			var option = '<option value='+arr[index]+'>'+arr[index]+'</option>';
+			$('#friend').append(option);
+		});//each*/
+		$.each(arr, function(index, item){
+			var option = '<option value='+item+'>'+item+'</option>';
+			$('#friend').append(option);
+		});
+		
+		//3. 생성된 폼을 제거...remove()
+		$('#deleteOptionBtn').click(function(){
+			$('#friend>option').remove();
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<input type="button" value="옵션 생성" id="addOptionBtn">
+	<input type="button" value="옵션 삭제" id="deleteOptionBtn">
+	<select id="friend"></select>
+</body>
+</html>

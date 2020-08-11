@@ -1,0 +1,22 @@
+package oop.greet;
+// EncoreGreet 클래스의 용도...
+/*
+* EncoreGreet는 
+* Encore 교육센터 수강생들에게 전하는 인사말을 저장하고 있는 클래스
+ */
+public class EncoreGreet {
+	// Variable(변수) : 값이 저장되는 공간, Value(값)
+	// 클래스는 구성요소가 2개밖에 없음. Field와 Method
+	// Variable : Field (class 바로 아래 온 변수를 Field라고 함. 이게 더 정확한 용어. name과 message라는 2개의 Field가 아래 있음.)
+	// 필드는 클래스를 구성하는 요소들을 뽑아냄.
+	public String name = "James"; 
+	// =은 Assign. 할당해주는 역할. 같다는 의미가 아님. 사람은 왼쪽에서 오른쪽으로 코드를 보지만 기계는 반대로 봄. 그래서 James가 name이라는 공간에 들어가는 것.
+	// 변수에 값을 넣어주는 것 = 초기화(Initialization) - 값은 매번 할당될 때마다 갱신됨. 그래서 이걸 초기화라고 함. 새로운 값으로 할당되는 것을 초기화.
+	public String message = "Hello Good Day~~~";
+	
+	// Method (클래스를 통해 행하는 기능)
+	public void sayHello() {
+		System.out.println(name+", "+message);
+	}
+
+}

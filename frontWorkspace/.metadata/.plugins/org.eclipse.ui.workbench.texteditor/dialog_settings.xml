@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wst.html.ui.internal.preferences.ui.HTMLTemplatePreferencePage$HTMLEditTemplateDialog_dialogBounds">
+		<item value="827" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="683" key="DIALOG_HEIGHT"/>
+		<item value="-809" key="DIALOG_X_ORIGIN"/>
+		<item value="12" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="50" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="50"/>
+			<item value="poster"/>
+			<item value="vplay"/>
+			<item value="미리 보기"/>
+			<item value="ho"/>
+			<item value="n/a"/>
+			<item value="toys"/>
+			<item value="base"/>
+			<item value="is"/>
+			<item value="삭제"/>
+			<item value="찜 리스트"/>
+			<item value="jimfrm"/>
+			<item value="form"/>
+			<item value="07_media_img"/>
+			<item value="th"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="393" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="523" key="DIALOG_HEIGHT"/>
+		<item value="114" key="DIALOG_X_ORIGIN"/>
+		<item value="198" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

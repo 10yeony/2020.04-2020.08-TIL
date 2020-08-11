@@ -1,0 +1,21 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+	public static void main(String[] args) {
+		int n = 100;
+		int answer = 0;
+        int[] fList = new int[n+1];
+        fList[0] = 0;
+        fList[1] = 1;
+        for(int i=2; i<27; i++){
+            fList[i] = fList[i-1] + fList[i-2];
+            System.out.println(i+"번째 값 : "+fList[i]);
+        }
+        answer = (int)fList[n] % 1234567;
+        
+        //System.out.println(answer);
+	}
+
+}

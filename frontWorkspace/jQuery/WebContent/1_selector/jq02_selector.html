@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		// h1, p태그를 한꺼번에 선택자로 지정.. 열거형..
+		$('h1, p').css('color', 'orange');
+		
+		//div 태그의 자식인 태그 p태그를 선택자로 지정... color red
+		$('div p').css('color', 'red');
+		
+		//3개의 p태그 중에서... 첫번째 p태그를 선택자로 지정
+		//$('p:first').css('background', 'grey');
+		//$('p').first().css('background', 'grey');
+		
+		//마지막 p태그를 선택자로 지정. 
+		//$('p:last').css('background', 'yellow');
+		//$('p').last().css('background', 'yellow');
+		
+		//eq = equivalent 동등한. 같다! 제일 많이 씀.
+		$('p:eq(0)').css('background', 'grey'); //0번째
+		
+		//p 태그인데 id가 paragraph. 그냥 id만 쓰기보다 이렇게 더 많이 씀. hierarchy를 짚어가면서 정교하게 함.
+		$('p#paragraph').css('border', '1px solid green');
+		
+		//p #paragraph : p 태그의 자식 중에서 id가 paragraph
+		
+		//p 태그인데 class가 statement.
+		//공통적으로 statement으로 먹이고(테두리 파란색)
+		$('p.statement').css('border', '1px solid blue');
+		//개별적으로 item으로 먹이고(글자색 빨간색) => 이렇게 많이 씀.
+		$('p.item').css('color', 'red');
+	});
+</script>
+</head>
+<body>
+<h1>What is jQuery</h1>
+<div>
+	<p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+</div>
+<p id="paragraph">It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. </p>
+<p class="statement">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+<p class="statement item">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+</body>
+</html>

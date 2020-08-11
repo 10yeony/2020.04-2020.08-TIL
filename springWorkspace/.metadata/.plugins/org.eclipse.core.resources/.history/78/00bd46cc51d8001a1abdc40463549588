@@ -1,0 +1,38 @@
+package com.encore.spring.test;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.encore.spring.domain.Item;
+
+public class MyBatisJunitTest {
+		
+	@Test
+	public void unit() throws Exception{
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		SqlSession session = factory.openSession();
+
+		session.update("ItemMapper.updateRecordCount", 1);
+		session.commit();
+
+		System.out.println("===============================================");
+		Item vo = session.selectOne("ItemMapper.getItem", 1);
+		System.out.println(vo);
+
+		System.out.println("===============================================");
+		List<MyProduct> list = session.selectList("ProductMapper.findByProductName", "세탁기");
+		for(MyProduct v : list) System.out.println(v);
+
+		System.out.println("===============================================");
+		List<MyProduct> list2 = session.selectList("ProductMapper.findProducts");
+		System.out.println(list2);
+	}
+}

@@ -1,0 +1,19 @@
+package self;
+
+public class Programmer {
+	private String name;
+	private int salary;
+	private String tech;
+	
+	public Programmer(String name, int salary, String tech) {
+		super();
+		this.name = name;
+		this.salary = salary;
+		this.tech = tech;
+	}
+	
+	public MyDate birthDay;
+	
+	public NoteBook noteBook;
+	
+}

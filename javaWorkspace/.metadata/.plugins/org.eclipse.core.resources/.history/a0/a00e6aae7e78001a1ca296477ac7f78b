@@ -1,0 +1,18 @@
+package oop.javadoc.test;
+/*
+ * main() 가지고 실행을 하는 실행 클래스
+ * 실행...
+ * JavaComment 객체를 생성 == 메모리에 올린다. == 식구(Member-Field, Method)가 메모리에 올라간다
+ * 													|
+ * 												JVM > Heap
+ *                              Heap에 올라가는 멤버들은 반드시 new라는 키워드를 통해서 생성된 객체만 올라감
+ */
+
+public class JavaCommentTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

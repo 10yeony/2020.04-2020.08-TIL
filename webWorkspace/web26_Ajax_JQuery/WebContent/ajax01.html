@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('#ajaxBtn').click(function(){
+			var id = $('#id').val();
+			var pass = $('#pass').val();
+			
+			//제이쿼리에서 비동기는 $.ajax로 시작
+			$.ajax({
+				//요청
+				type: "post", 
+				url: "JQueryAjax", 
+				data: "id="+id+"&pass="+pass, //, 빠르리면 에러남.
+				
+				//응답
+				success:function(result){ //받아올 이름 아무거나 받아와도 됨. 
+					//보통 data로 많이 받아오는데 위의 data와 헷갈릴까봐 result로 받겠다.
+					$('#resultView').html(result).css({
+						'background':'yellow',
+						'color':'red',
+						'font-weight':'bold'
+					});
+				}//callback. );까지 닫으면 안 됨!
+			});//ajax
+		});//click
+	});//ready
+</script>
+</head>
+<body>
+	<h2>Ajax Using Jquery...</h2>
+	ID <input type="text" name="userId" id="id"><br/><br/>
+	PASS <input type="password" name="userPass" id="pass"><br/><br/>
+	<input type="button" value="ajaxBtn" id="ajaxBtn">
+	<span id="resultView"></span>
+</body>
+</html>

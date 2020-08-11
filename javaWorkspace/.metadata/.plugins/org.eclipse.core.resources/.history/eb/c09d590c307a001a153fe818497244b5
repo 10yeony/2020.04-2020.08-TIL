@@ -1,0 +1,30 @@
+package self.test;
+
+import java.util.Scanner;
+
+class CatchAMouse{
+	public static String solv(int x, int y, int z) {
+		/*
+		 * 구현...
+		 * Math.abs()
+		 */
+		return "";
+	}
+}
+public class CatchAMoustTest {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("고양이 A의 좌표를 입력하세요>>>");
+		int cata = sc.nextInt();
+		System.out.println("고양이 B의 좌표를 입력하세요>>>");
+		int catb = sc.nextInt();
+		System.out.println("쥐의 좌표를 입력하세요>>>");
+		int mouse = sc.nextInt();
+		// 순서대로 값을 입력받고
+		// 입력받은 값을 CatchAMouse에 값을 넣으면 됨. 근데 static이니까 객체 생성 필요X.
+		String str = solv(cata, catb, mouse);
+		//System.out.printf("Result :: "+str);
+
+	}
+
+}

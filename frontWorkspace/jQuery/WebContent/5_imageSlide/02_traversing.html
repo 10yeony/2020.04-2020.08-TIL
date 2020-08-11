@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table tr td{ 
+		border: 2px solid black; 
+		margin: 10px; 
+		width: 80px; 
+		height: 90px;	
+	}
+	.small img{
+		border: none;
+		margin: 10px;
+		width: 80px;
+		height: 90px;
+	}
+	.large img{
+		width: 450px;
+	}
+	.hover{
+		background: lime;
+		color: black;
+		font-weight: bold;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	//1. 마우스가 작은 이미지 영역 안에 들어가면 hover 효과 나타나도록....
+	$('.small').hover(function(){ //현재 선택자는 <a> 태그
+		//mouseenter
+		//class가 small인 <a>의 부모인 <td>에 addClass!
+		$(this).parent().addClass('hover');
+		
+		//마우스가 진입한 이미지의 이름(즉 주소)을 받아와서 
+		//그 이름을 large 이미지 쪽으로 건넨다.
+		
+		//attr(=attribute) 함수 쓰면 속성에 대한 값을 씀.
+		//attr('href') href의 속성값
+		var imagename = $(this).attr('href');
+		
+		$('.large').children().fadeOut(1000);
+		//attr('src', imagename) ==> src 속성값을 변수 imagename으로 준다.
+		$('.large').children().attr('src', imagename);
+		$('.large').children().fadeIn(2000);
+		
+	}, function(){
+		//mouseleave
+		$(this).parent().removeClass('hover');
+
+		
+	}); //hover
+	
+	//td태그 안에서 p 태그를 찾아서... css() 적용... td, find().css()
+	//글씨 사이즈 12, 진하게, 색깔은 red
+	$('td').find('p').css({
+		'font-size':'12',
+		'font-weight':'bold',
+		'color':'red'
+	});
+});
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td width=150 height=200 align=center>
+			<a href="../image/2.JPG" class="small">
+				<img src="../image/2.JPG">
+			</a>
+			<p>썬그라스</p>
+		</td>
+		<td width="350" align="center" rowspan="5">
+			<a href="../image/2.JPG" class="large">
+				<img src="../image/2.JPG">
+			</a>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width=150 height=200 align=center>
+			<a href="../image/3.JPG" class="small">
+				<img src="../image/3.JPG">
+			</a>
+			<p>반바지</p>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width=150 height=200 align=center>
+			<a href="../image/4.JPG" class="small">
+				<img src="../image/4.JPG">
+			</a>
+			<p>머리핀</p>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width=150 height=200 align=center>
+			<a href="../image/5.JPG" class="small">
+				<img src="../image/5.JPG">
+			</a>
+			<p>파마머리</p>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width=150 height=200 align=center>
+			<a href="../image/1.JPG" class="small">
+				<img src="../image/1.JPG">
+			</a>
+			<p>긴머리</p>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

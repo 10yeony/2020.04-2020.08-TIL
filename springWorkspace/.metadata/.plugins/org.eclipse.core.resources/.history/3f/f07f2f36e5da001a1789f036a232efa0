@@ -1,0 +1,47 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+import com.encore.spring.model.MemberService;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	
+	@Autowired
+	private MemberDAO memberDao;
+	
+	@Override
+	public List<Member> viewAllMember() {
+		return memberDao.viewAllMember();
+	}
+
+	@Override
+	public Member findMember(String id) {
+		return memberDao.findMember(id);
+	}
+	
+	public boolean idCheck(String id) {
+		Member member = findMember(id);
+		if(member == null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	@Override
+	public void registerMember(Member vo) {
+		memberDao.registerMember(vo);
+	}
+
+	@Override
+	public void updateMember(Member vo) {
+		memberDao.updateMember(vo);
+	}
+
+}

@@ -1,0 +1,105 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('input[type=button]').click(function() {
+			window.open("idCheck.do?id="+$('#id').val(), "","width=300,height=200, top=100,left=400");
+		});//click
+		
+		$('#id').keyup(function(){
+			var saveInput
+			var inputLength = $(this).val().length;
+			if(inputLength==0){
+				$('#judge').text('아이디를 입력하세요.');
+			}
+			if(inputLength>0 && inputLength<=5){
+				saveInput = $(this).val();
+				
+				$.ajax({
+					type:'post',
+					dataType:"xml", //응답될 때의 데이터 타입을 지정.
+					//(보통 xml, text, json 중 하나. html도 올 수 있긴 함)
+					//안 써줘도 되지만 json일 때는 덩어리로 데이터가 넘어온다는 걸 알리기 위해 써줌.
+					
+					success:function(result){
+						var str = '';
+						$(result).find('member').each(function(index, item){
+							//받아온 xml 파일에서 <member> 태그를 찾고 그 때마다 반복
+							var id = $(this).find('id').text(); //값을 뽑아내는 것이므로 text. 폼이 아니므로 val() 아님
+							var name = $(this).find('name').text();
+							var addr = $(this).find('addr').text();
+							
+							str += '<tr>';
+							str += '<td>'+id+'</td>';
+							str += '<td>'+name+'</td>';
+							str += '<td>'+addr+'</td>';
+							str += '</tr>';
+						});//each
+						//one 함수 안 쓸 경우 기존 데이터를 지우고 붙이면 됨.
+						$('#table tr:gt(0)').remove(); 
+						//greater than의 약자. 0은 포함 안 되고 그 이후부터
+						//반대는 less than
+						
+						//table에 붙인다.. append
+						$('#table').append(str);
+					}, //callback
+					error:function(err){
+						alert("오류발생====>"+err);
+					}//error
+					
+				});//ajax
+			}
+			if(inputLength>5){
+				$('#judge').text('아이디는 5자 이하만 가능합니다.');
+				$('#id').text(saveInput);
+			}
+		});//keyup
+	});
+</script>
+</head>
+<body>
+<h3>회원가입</h3>
+<!-- register_action에서 하고있는 기능이  RegisterServletd으로 이동
+	 register_result.jsp로 결과를 보낸다.
+-->
+<form action="registerMember.do" name="registerForm" method="post">
+ID : <input type="text" name="id" id="id" required="required">
+<input type="button" value="중복확인"><br><br>
+<span id="judge"></span>
+PASSWORD : <input type="password" name="pwd" required="required"><br><br>
+NAME : <input type="text" name="name" required="required"><br><br>
+ADDRESS : <input type="text" name="addr" required="required"><br><br>
+
+<input type="submit" value="member register">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

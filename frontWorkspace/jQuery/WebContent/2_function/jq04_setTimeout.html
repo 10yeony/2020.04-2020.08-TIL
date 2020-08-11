@@ -1,0 +1,53 @@
+<!-- 
+폼에 입력된 값 받아올 때
+value //자바스크립트 | val() //제이쿼리
+filter()
+first()
+last()
+setTimeout()
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//1. select 태그 중에서 선택한 값... 이름...name 변수에 할당.. alert(name)
+		/* var name = $('select>option:selected').val();
+		alert(name); */
+		
+		//2. setTimeout()을 사용해서 일정 시간 이후에 로직이 돌아가도록 할 것.	
+		//단 한번만 호출된다...
+		setTimeout(function() {
+			//3000이라고 하면 3초 뒤에 이 안에 있는 로직이 호출.
+			//3초 뒤에 이 안에 코드가 동작한다...
+			var fruit = $('select>option:selected').val();
+			alert(fruit);
+		}, 2000); 
+		
+		//3. select 폼에서 내가 선택한 이름이... 5초 지난 후 아래에 추가한 입력박스에 출력되도록... setTimeout()을 사용
+		setTimeout(function(){
+			var fruit = $('select>option:selected').val();
+			$('input[type=text]').val(fruit);
+		}, 5000);
+	});	
+</script>
+</head>
+<body>
+	<!-- multiple 달아서 여러 개가 보일 것. -->
+	<select multiple="multiple">
+		<option>딸기</option>
+		<option>바나나</option>
+		<option>망고</option>
+		<option>멜론</option>
+	</select><br/><br/>
+	
+	<!-- 폼 추가 -->
+	선택한 과일 출력 :: <input type="text" name="result" size="16">
+</body>
+</html>

@@ -1,0 +1,20 @@
+package oop.greet.test;
+
+import oop.greet.EncoreGreet;
+
+public class EncoreGreetTest {
+
+	public static void main(String[] args) { //실행 메소드
+		EncoreGreet en = new EncoreGreet(); 
+		// 객체를 만들 때 en이라는 이름으로 만들었음.
+		// 객체를 생성한다 = 메모리에 올린다(객체의 구성요소가 올라간다)
+		
+		en.name="Juliet";
+		en.message="Nice Day~~~!!";
+		
+		en.sayHello();
+		// TODO Auto-generated method stub
+
+	}
+
+}

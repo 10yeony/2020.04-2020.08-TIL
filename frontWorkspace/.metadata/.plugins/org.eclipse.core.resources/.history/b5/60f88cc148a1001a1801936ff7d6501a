@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	
+});
+</script>
+</head>
+<body>
+<form action="09_result.jsp" id="frm">
+ID : <input type="text" name="id" id="id"><p>
+PASSWORD : <input type="password" name="pass" id="pass"><p><p>
+
+<strong>당신의 취미를 고르세요</strong>
+<input type="checkbox" name="hobby" value="Reading">Reading<br/>
+<input type="checkbox" name="hobby" value="Walking">Reading<br/>
+<input type="checkbox" name="hobby" value="Listen to Music">Listen to Music<br/>
+<input type="checkbox" name="hobby" value="Drinking">Drinking<br/>
+<hr>
+<select id="hp" multiple="multiple" name="hp">
+	<option></option>
+</select>
+</form>
+</body>
+</html>

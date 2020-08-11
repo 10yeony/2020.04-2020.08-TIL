@@ -1,0 +1,62 @@
+package test;
+/*
+ * 선언된 위치에 따라서 나눠진다.
+ * 
+ *        Field                   Local Variable
+ * 1. 클래스 바로 밑, 메소드 바깥          |     메소드 { 안
+ * 2. 객체의 멤버이므로 기본값이 있다.  |   기본값이 없다... 반드시 초기화하고 써야 한다.
+ * 3. JVM에서 Heap 안에 잡힘             |   JVM에서 Stack 안에 잡힘
+ * 4. Member Variable         |      지역변수, Temporary Variable, Automatically Variable  
+ *     인스턴스 변수, 객체 변수
+ *   (전역 변수, 클래스 변수랑 다름)
+ */
+public class OperatorAppTest1 { // 실행 테스트 이름은 Test로 끝나거나 AppTest로 끝남
+
+	public static void main(String[] args) {
+		// Local Variable 선언... 메인 메소드 안에 선언됨.
+		/*int i;
+		int j;*/ //이렇게 쓰면 에러뜬다. 반드시 초기화해야 함
+		int i = 5;
+		int j = 3;
+		
+		Operator o1 = new Operator();
+		Operator o2 = new Operator();
+		
+		System.out.println("o1 주소값 : "+o1);
+		System.out.println("o2 주소값 : "+o2);
+		
+		o1 = o2; // 주소값이 o2로 동일해진다. 주소값이 동일하다 = 같은 객체다. 
+		// 숙제 : 메모리 그림으로 그리기
+		
+		System.out.println(o1==o2); // true
+		
+		System.out.println("연산자 % :: "+i % j); // 2 (% (modulous) 나머지)
+		System.out.println(i==j); // false
+		System.out.println(i!=j); // true
+		
+		boolean flag = false;
+		System.out.println(flag); // false
+		System.out.println(!flag); // ture // !=not
+		
+		int k = 10;
+		System.out.println(k++); // 나중에 1씩 증가.... 10
+		System.out.println(k); // 여기서 11로 된 거 확인 가능.
+ 	}
+
+}
+
+class Operator{ // class를 여러 개 연달아서 만들 때는 public은 딱 하나의 class에만 붙여야 함.x
+	// 동시에 다른 class에도 붙이면 에러 뜸.
+	// 메인 메소드를 가지고 있는 class 앞에 public을 붙여야 함.
+	// 그리고 public으로 지정된 클래스 이름으로 저장해야 함.
+	public boolean test1() {
+		System.out.println("test1() call.....");
+		return true;
+	}
+	
+	public boolean test2() {
+		System.out.println("test2() call.....");
+		return false;
+	}
+	
+}

@@ -1,0 +1,30 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.encore.spring.domain.Item;
+import com.encore.spring.model.ItemDAO;
+
+public class ItemDAOImpl implements ItemDAO {
+	private SqlSession sqlSession;
+
+	@Override
+	public List<Item> getAllItem() throws Exception {
+		return sqlSession.selectList("ItemMapper.getAllItem");
+	}
+
+	@Override
+	public Item getItem(int itemNumber) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateRecordCount(int itemNumber) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

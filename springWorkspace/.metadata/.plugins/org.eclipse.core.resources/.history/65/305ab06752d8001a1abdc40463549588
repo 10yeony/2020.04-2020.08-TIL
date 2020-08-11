@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="config/jdbc.properties"/>
+	
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<!-- vo 패키지 -->
+	<typeAliases>
+		<package name="com.encore.spring.domain"/>
+	</typeAliases>
+	
+	<!-- 단위테스트를 위한 것 -->
+	<environments default="aa">
+		<environment id="aa">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${JDBC.Driver}"/> <!-- 이 부분은 Bean 설정 문서와 다름. -->
+				<property name="url" value="${JDBC.ConnectionURL}"/>
+				<property name="username" value="${JDBC.Username}"/>
+				<property name="password" value="${JDBC.Password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mapper/item_mapping.xml"/>
+	</mappers>
+</configuration>

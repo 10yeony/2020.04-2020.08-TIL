@@ -1,0 +1,31 @@
+package oop.encapsulation.test;
+import java.util.Scanner;
+
+/*
+ * Scanner 객체를 통해서 월과 날짜를 입력받도록
+ * 마지막에 오늘은 4월 22일입니다.
+ * 이런 식으로 출력
+ * 
+ * 만약에 잘못된 월이나 날짜가 입력된 경우에는 
+ * 잘못된 날짜입니다.라는 메세지
+ */
+import oop.encapsulation.MyDate;
+
+public class MyDateTest1 {
+
+	public static void main(String[] args) {
+		// MyDate md = new MyDate();
+		//필드에 직접적으로 값을 할당. 
+		
+		Scanner sc = new Scanner(System.in);
+		int md = sc.nextInt();
+		
+		sc.setMonth(13);
+		System.out.println(sc.getMonth());
+		
+		/*md.month = 13;
+		md.day = 33; // 이렇게 잘못된 값이 들어갈 수 있음.
+		// 그래서 MyDate에 있는 필드 앞에 private 붙여주면 필드가 not visible하다고 하며 접근 막힘 */
+	}
+
+}

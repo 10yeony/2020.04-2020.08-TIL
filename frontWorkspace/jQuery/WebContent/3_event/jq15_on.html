@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>on()|click()  one()</title>
+<style>
+	div { border: 1px solid red; border-radius: 10px; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	/* $('div').on('click', function(){ //bind나 click으로 써도 됨.
+		//해당 영역을 복제해서 body에 붙인다...
+		//원본 클릭하면 계속 복제돼서 붙음.
+		//처음에 존재했던 컴포넌트에만 적용됨.
+		//미래에 만들어진 컴포넌트에는 적용 안됨. 새로 생긴 div 암만 클릭해봐도 적용X.
+		$(this).clone().appendTo('body'); //이 때 append() 사용 안 됨
+	}); */
+	
+	//one
+	$('div').one('click', function(){ 
+		//one은 on과 달리 한번밖에 안 됨.
+		$(this).clone().appendTo('body'); 
+	});
+});
+</script>
+</head>
+<body>
+	<div>
+		<h1>$(selector).on()</h1>
+		<!-- <p>on() 함수 사용하기 :: 처음 존재했던 태그에만 적용됨</p> -->
+		<p>on() 함수 사용하기 :: 클릭함수와 동일하게 사용...</p>
+	</div>
+</body>
+</html>

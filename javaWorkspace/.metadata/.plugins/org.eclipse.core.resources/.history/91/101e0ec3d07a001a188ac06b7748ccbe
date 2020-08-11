@@ -1,0 +1,21 @@
+package array.test3;
+
+import java.util.Scanner;
+
+/*
+ * flat 평평한. 평평하게 만들다.
+ */
+public class FlattenBoxTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int tc = 0; // test case
+		int boxLen = 100; // box length
+		for(int tcn=1; tcn<=tc; tcn++) {//test case number
+			int dump = sc.nextInt();
+			int[ ] boxes = new int[boxLen];
+		}
+
+	}
+
+}

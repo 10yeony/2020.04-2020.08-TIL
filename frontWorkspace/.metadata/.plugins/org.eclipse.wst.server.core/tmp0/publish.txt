@@ -1,0 +1,9 @@
+#Tomcat publish data
+#Mon Jun 01 09:11:33 KST 2020
+org.eclipse.jst.jee.server\:BootStrap=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\BootStrap
+org.eclipse.jst.jee.server\:jQueryUI=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\jQueryUI
+org.eclipse.jst.jee.server\:JavaScript=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\JavaScript
+org.eclipse.jst.jee.server\:HTML5=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\HTML5
+org.eclipse.jst.jee.server\:SummaryWorkshop=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\SummaryWorkshop
+org.eclipse.jst.jee.server\:CSS3=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\CSS3
+org.eclipse.jst.jee.server\:jQuery=C\:\\kyh\\apache-tomcat-8.5.55\\webapps\\jQuery

@@ -1,0 +1,10 @@
+package ibatis.services.user;
+
+/*
+ * 비즈니스 로직의 템플릿이 들어있다.
+ * 5개... mybatis-userservice-mapping10.xml
+ * 
+ */
+public interface UserDAO {
+
+}

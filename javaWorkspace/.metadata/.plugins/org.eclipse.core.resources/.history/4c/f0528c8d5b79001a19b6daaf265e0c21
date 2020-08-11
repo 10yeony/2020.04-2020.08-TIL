@@ -1,0 +1,14 @@
+package self;
+
+public class NoteBook {
+	private String brandName;
+	private int price;
+	public NoteBook(String brandName, int price) {
+		super();
+		this.brandName = brandName;
+		this.price = price;
+	}
+	public String getNoteBook() {
+		return "브랜드 : " + brandName + "가격 : " + price;
+	}
+}

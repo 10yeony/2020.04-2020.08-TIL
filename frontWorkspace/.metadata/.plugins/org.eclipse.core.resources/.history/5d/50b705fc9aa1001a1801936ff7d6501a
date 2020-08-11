@@ -1,0 +1,27 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+	public static void main(String[] args) {
+		int n = 5;
+		int[] arr1 = {9, 20, 28, 18, 11};
+		int[] arr2 = {30, 1, 21, 17, 28};
+		String str = "";
+		int num = 0;
+		String[] answer = new String[n];
+        for(int i=0; i<n; i++) {
+        	str = "";
+        	for(int j=n-1; j>=0; j--) {
+        		num = (int) Math.pow(2, j);
+        		if(arr1[i] < num && arr2[i] < num) {
+        			str += " ";
+        		}else {
+        			str += "#";
+        		}
+        	}
+        	answer[i] = str;
+        }
+	}
+
+}

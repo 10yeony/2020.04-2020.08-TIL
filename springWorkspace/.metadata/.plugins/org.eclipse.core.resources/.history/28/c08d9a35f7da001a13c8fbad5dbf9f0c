@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('input[type=button]').click(function() {
+			window.open("idCheck.do?id="+$('#id').val(), "","width=300,height=200, top=100,left=400");
+		});//click
+		
+		$('#id').keyup(function(){
+			var saveInput
+			var inputLength = $(this).val().length;
+			if(inputLength>0 && inputLength<=5){
+				saveInput = $(this).val();
+				
+				$.ajax({
+					//요청
+					type: "post", 
+					url: "idCheck.do", 
+					data: "id="+id,
+					
+					//응답
+					success:function(data){ 
+						if(data==true){
+							$('#judge').text('사용 중인 아이디입니다.');
+						}
+						if(data==false){
+							$('#judge').text('사용 가능한 아이디입니다.');
+						}
+					}, //callback
+					error:function(err){
+						$('#judge').text("오류발생====>"+err);
+					}//error
+					
+				});//ajax
+			}
+			if(inputLength>5){
+				$('#judge').text('아이디는 5자 이하만 가능합니다.');
+				$('#id').focus();
+			}
+		});//keyup
+	});
+</script>
+</head>
+<body>
+<h3>회원가입</h3>
+<!-- register_action에서 하고있는 기능이  RegisterServletd으로 이동
+	 register_result.jsp로 결과를 보낸다.
+-->
+<form action="registerMember.do" name="registerForm" method="post">
+ID : <input type="text" name="id" id="id" required="required">
+<input type="button" value="중복확인"><br><br>
+<span id="judge" style="font: red">아이디를 입력하세요.</span><p>
+PASSWORD : <input type="password" name="pwd" required="required"><br><br>
+NAME : <input type="text" name="name" required="required"><br><br>
+ADDRESS : <input type="text" name="addr" required="required"><br><br>
+
+<input type="submit" value="member register">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

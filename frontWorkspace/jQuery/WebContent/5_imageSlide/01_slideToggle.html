@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.image{
+		position: absolute; 
+		top: 10px; /*위에서 10px만큼*/
+		left: 10px; /*왼쪽에서 10px만큼 떨어진다.*/
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	//1. 페이지가 로드되자마자 일단 모든 이미지를 숨긴다.
+	$('.image').hide();
+	
+	//2. 첫번째 이미지가 보여지도록... 서서히... show(), fadeIn
+	$('.image:first').show(3000);
+	
+	//3. 보이는 이미지를 클릭할 때마다 다음번 이미지가 보여지도록... 슬라이딩 효과로...
+	$('.image').click(function(event){ //발생한 이벤트를 인자값으로 넣어주고
+		event.preventDefault(); //a 태그의 가장 기본적인 이벤트(href)를 해제
+		
+		//현재 이미지의 다음번 이미지
+		//$(this).next().show(2000); 
+		
+		//그런데 위 코드는 마지막 사진에서 다음번 이미지가 없어서 끝난다.
+		//마지막 사진에서 다시 처음으로 돌아가고 싶다...
+		//alert($(this).next().length); //다음번이 있으면 1, 없으면 0
+		//alert($('.image:last').next().length); 마지막 이미지의 다음의 길이는 0임
+		//확인했으니 아래 코드!
+		var next = $(this).next().length?$(this).next():$('.image:first');
+		//삼항연산자. 1과 0은 true와 false로 가능.값이 있으면 다음 / 없으면 처음.
+		
+		$(this).hide(3000);
+		next.show(3000);
+		
+		/* $(this).slideToggle(3000);
+		next.slideToggle(2000); */
+		//this가 보이면 next 안 보이고 this가 보이면 next 안 보이고...
+		//슬라이드토글이 hide와 show 합친 것.. 깜빡깜빡
+	});
+});
+</script>
+</head>
+<body>
+	<!-- anchor 태그는 인라인태그 -->
+	<a class="image" href="http://jquery.com">
+		<img src="../image/1.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img src="../image/2.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img src="../image/3.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img src="../image/4.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img src="../image/5.JPG" width="300" height="370">
+	</a>
+</body>
+</html>

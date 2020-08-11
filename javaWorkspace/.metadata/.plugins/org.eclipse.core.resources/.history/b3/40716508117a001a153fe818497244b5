@@ -1,0 +1,16 @@
+package loop.test;
+/*
+ * 반복문
+ * ::
+ * 해당하는 조건이 참인 동안 코드 블록을 계속 수행하는 로직
+ * for / while / do~while
+ */
+
+public class BasocLoopTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

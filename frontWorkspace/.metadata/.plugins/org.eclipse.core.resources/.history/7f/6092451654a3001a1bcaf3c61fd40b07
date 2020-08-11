@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		position: relative;
+		width: 70px; height: 70px;
+		border: 2px solid red;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	//애니메이션 가장 많이 쓰는 
+	$('div').click(function(){
+		//1. 각각의 div 해당 영역이 오른쪽으로 500 이동...천천히...
+		$(this).animate({
+			left: '500'
+		}, 'slow');
+	});
+	
+	//1. hover()를 이용해서 오른편 500 갔다가 다시 원래 지점으로 돌아오도록 로직을 작성
+	/* $('div').hover(function(){
+		$(this).animate({left: '500'}, 'slow');
+	}, function(){
+		$(this).animate({left: '0'}, 'slow');
+	}); */
+	
+	/* $('div').click(function(){
+		$(this).animate({
+			//누적하게 함. 80, 160, 240, ...
+			//+80하면 안 됨. 계속 할당해야 하므로 +=80
+			width: '+=80',
+			height: '+=80'
+		}, 'slow');
+	});*/
+});
+</script>
+</head>
+<body>
+<div></div><div></div>
+<div></div><div></div>
+<div></div><div></div>
+</body>
+</html>

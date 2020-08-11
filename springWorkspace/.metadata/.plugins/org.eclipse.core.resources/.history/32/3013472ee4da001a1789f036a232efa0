@@ -1,0 +1,9 @@
+package com.encore.spring;
+
+import org.junit.Test;
+
+import com.encore.spring.model.impl.MemberDAOImpl;
+
+public class MyBatisJunitTest2 {
+	}
+}

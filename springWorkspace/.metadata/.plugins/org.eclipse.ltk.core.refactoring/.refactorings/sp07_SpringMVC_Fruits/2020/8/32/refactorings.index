@@ -1,0 +1,15 @@
+1596763847887	Delete element
+1596763905214	Rename package 'com.encore.spring'
+1596764079476	Rename resource 'myproduct.xml'
+1596765364567	Rename type 'MyBatisUnitTest2'
+1596766482783	Rename resource 'mvcBean.xml'
+1596766491345	Rename resource 'businessBean.xml'
+1596766546464	Rename resource 'item_mapping.xml'
+1596767666342	Delete element
+1596767981428	Move 3 resources to 'webapp'
+1596768707268	Rename type 'IndexController'
+1596769182311	Delete element
+1596769191920	Move 'itemList.jsp' to 'result'
+1596769263087	Move 'itemView.jsp' to 'result'
+1596770130981	Rename type 'ItemService'
+1596770139603	Rename type 'ItemDAO'

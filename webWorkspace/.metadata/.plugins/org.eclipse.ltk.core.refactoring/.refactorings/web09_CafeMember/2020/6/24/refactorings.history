@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;servlet.model&apos; to &apos;web11_HttpSession/src&apos;&#x0D;&#x0A;- Original project: &apos;web09_CafeMember&apos;&#x0D;&#x0A;- Destination element: &apos;web11_HttpSession/src&apos;&#x0D;&#x0A;- Original element: &apos;web09_CafeMember/src/servlet.model&apos;" description="Copy package" destination="=web11_HttpSession/src" element1="/src&lt;servlet.model" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1591583819462" version="1.0"/>
+</session>

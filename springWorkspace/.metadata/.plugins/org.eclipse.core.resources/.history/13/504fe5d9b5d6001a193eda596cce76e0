@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	ResultMap :: select 쿼리문에서만 사용된다.
+	Dynamic Query
+-->
+<mapper namespace="UserMapper07">
+	<resultMap type="user" id="userSelectRM">
+		<result property="userId" column="user_id"/>
+		<result property="userName" column="user_name"/>
+		<result property="password" column="password"/>
+		<result property="age" column="age"/>
+		<result property="grade" column="grade"/>
+		<result property="regDate" column="reg_date"/>
+	</resultMap>
+ 	<select id="getUserList" parameterType="user" resultType="user">
+ 		SELECT
+ 		user_id,
+ 		user_name,
+ 		password,
+ 		age,
+ 		grade,
+ 		reg_date
+ 		FROM users
+ 		WHERE user_name=#{userName} AND age=#{age}
+ 	</select>
+</mapper>

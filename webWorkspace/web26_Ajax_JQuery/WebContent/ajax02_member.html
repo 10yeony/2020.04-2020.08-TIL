@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//$('#send').one('click', function(){
+		$('#send').click(function(){
+			$.ajax({
+				type:'post',
+				url:"http://localhost:8888/member.xml",
+				dataType:"xml", //응답될 때의 데이터 타입을 지정.
+				//(보통 xml, text, json 중 하나. html도 올 수 있긴 함)
+				//안 써줘도 되지만 json일 때는 덩어리로 데이터가 넘어온다는 걸 알리기 위해 써줌.
+				
+				success:function(result){
+					var str = '';
+					$(result).find('member').each(function(index, item){
+						//받아온 xml 파일에서 <member> 태그를 찾고 그 때마다 반복
+						var id = $(this).find('id').text(); //값을 뽑아내는 것이므로 text. 폼이 아니므로 val() 아님
+						var name = $(this).find('name').text();
+						var addr = $(this).find('addr').text();
+						
+						str += '<tr>';
+						str += '<td>'+id+'</td>';
+						str += '<td>'+name+'</td>';
+						str += '<td>'+addr+'</td>';
+						str += '</tr>';
+					});//each
+					//one 함수 안 쓸 경우 기존 데이터를 지우고 붙이면 됨.
+					$('#table tr:gt(0)').remove(); 
+					//greater than의 약자. 0은 포함 안 되고 그 이후부터
+					//반대는 less than
+					
+					//table에 붙인다.. append
+					$('#table').append(str);
+				}, //callback
+				error:function(err){
+					alert("오류발생====>"+err);
+				}//error
+				
+			});//ajax
+		});//click
+	});//ready
+</script>
+</head>
+<body>
+<h2>========공공데이터 가져오기========</h2>
+<a href="#" id="send">XML 데이터 읽어들이기</a>
+<p></p>
+<table border="2" id="table" width="60%">
+	<tr>
+		<th>아이디</th><th>이 름</th><th>주 소</th>
+	</tr>
+	<!-- 출력 -->
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+package oop.greet.test;
+
+import java.util.Scanner;
+
+import oop.greet.EncoreGreet;
+
+public class EncoreGreetTest {
+
+	public static void main(String[] args) { //실행 메소드
+		EncoreGreet en = new EncoreGreet(); 
+		// 객체를 만들 때 en이라는 이름으로 만들었음.
+		// 객체를 생성한다 = 메모리에 올린다(객체의 구성요소가 올라간다) 메모리에 저장이 다 끝나면 주소값 할당.
+		// new EncoreGreet(); -> EncoreGreet en : 객체 만들어서, en이라는 공간에 주소값을 할당한다.		
+		
+		// 지금처럼 소스코드에 값을 ㅎ직접 하드코딩 하지 않고
+		// 실행시에 화면단에 값을 입력받아서 처리하도록... Scanner 사용
+		
+		Scanner sc = new Scanner(System.in); // 키보드로 입력받을 수 있는 스캐너가 만들어짐.
+		System.out.println("이름을 입력하세요>>>>>");
+		String scName = sc.nextLine();
+		
+		System.out.println("메세지를 입력하세요>>>>>");
+		String scMsg = sc.nextLine();
+		
+		en.sayHello();
+		// TODO Auto-generated method stub
+
+	}
+
+}

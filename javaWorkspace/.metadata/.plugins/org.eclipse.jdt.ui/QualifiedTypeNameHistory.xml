@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="oop.greet.test.EncoreGreetTest"/>
+<fullyQualifiedTypeName name="oop.javadoc.JavaComment"/>
+<fullyQualifiedTypeName name="oop.greet.EncoreGreet"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="workshop.RockPaperScissors"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+<fullyQualifiedTypeName name="com.encore.magazine.Magazine"/>
+<fullyQualifiedTypeName name="vehicle.child.Vehicle"/>
+<fullyQualifiedTypeName name="vehicle.Vehicle"/>
+<fullyQualifiedTypeName name="vehicle.child.Motocycle"/>
+<fullyQualifiedTypeName name="vehicle.child.Limousine"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

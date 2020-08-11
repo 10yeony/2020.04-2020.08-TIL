@@ -1,0 +1,11 @@
+package practice;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		int a = 3;
+		int b = 5;
+		int bigger = (a>b)? a: b;
+	}
+
+}

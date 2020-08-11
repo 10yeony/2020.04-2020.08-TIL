@@ -1,0 +1,58 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Main {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Queue<Integer> queue = new LinkedList<>();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringBuilder sb = new StringBuilder();
+		int n = Integer.parseInt(br.readLine());
+		for(int i=0; i<n; i++) {
+			String[] cmd = br.readLine().split(" ");
+			if(cmd[0].equals("push")) {
+				queue.add(Integer.parseInt(cmd[1]));
+			}//push
+			else if(cmd[0].equals("pop")) {
+				if(!queue.isEmpty()) {
+					sb.append(queue.poll()+"\n");
+				}else {
+					sb.append(-1+"\n");
+				}
+			}//pop
+			else if(cmd[0].equals("size")) {
+				sb.append(queue.size()+"\n");
+			}//size
+			else if(cmd[0].equals("empty")) {
+				if(queue.isEmpty()) {
+					sb.append(1+"\n");
+				}else {
+					sb.append(0+"\n");
+				}
+			}//empty
+			else if(cmd[0].equals("front")) {
+				if(!queue.isEmpty()) {
+					
+				}else {
+					sb.append(-1+"\n");
+				}
+			}//front
+			else if(cmd[0].equals("back")) {
+				if(!queue.isEmpty()) {
+					
+				}else {
+					sb.append(-1+"\n");
+				}
+			}//back
+			
+		}//for
+	}
+}

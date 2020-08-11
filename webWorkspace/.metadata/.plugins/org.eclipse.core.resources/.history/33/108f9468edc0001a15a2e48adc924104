@@ -1,0 +1,49 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Main2 {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Queue<Integer> temp1 = new LinkedList<>();
+		Queue<Integer> temp2 = new LinkedList<>();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringBuilder sb = new StringBuilder();
+		String[] number = br.readLine().split(" ");
+		int n = Integer.parseInt(number[0]);
+		int m = Integer.parseInt(number[1]);
+		int turn = 1;
+		sb.append("<");
+		for(int i=1; i<=n; i++) {
+			temp1.add(i);
+		}
+		while(!temp1.isEmpty() || !temp2.isEmpty()) {
+			for(int i=0; i<m-1; i++) {
+				if(turn==1) {
+					temp2.add(temp1.poll());
+				}
+				if(turn==2) {
+					temp1.add(temp2.poll());
+				}
+			}
+			if(turn==1) {
+				
+				turn=2;
+			}
+			if(turn==2) {
+				turn=1;
+			}
+		}
+		sb.append(">");
+		bw.write(sb.toString());
+		bw.flush();
+		bw.close();
+	}
+}

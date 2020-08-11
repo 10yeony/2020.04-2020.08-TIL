@@ -1,0 +1,32 @@
+package oop.javadoc;
+
+// 한줄 주석
+
+/*
+ * 여러줄 주석
+ */
+
+/**
+ * 
+ * @author KimYeonhee
+ * @since JDK 1.8.5
+ *
+ */
+
+public class JavaComment {
+	/**
+	 * 해당 점수를 받은 수강자의 이름이 입력되는 변수
+	 */
+
+	public String name;
+	// 이 아래 바로 /**라고 치면 자동으로 뜸. 
+	/**
+	 * 
+	 * @param java
+	 * @param algo
+	 * @return
+	 */
+	public int scoreSum(int java, int algo) {
+		return java + algo;
+	}
+}

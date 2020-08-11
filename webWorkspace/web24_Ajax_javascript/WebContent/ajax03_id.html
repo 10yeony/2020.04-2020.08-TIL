@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var xhr;
+	var uid;
+	function startRequest(){ //요청 관련된 로직이 담긴다.
+		uid = document.frm.userId.value;
+		xhr = new XMLHttpRequest(); //비동기 통신을 하기 위해 무조건 만들어야 하는 객체.
+		xhr.onreadystatechange = callback; //응답은 어디서 받을 것인가. 응답받을 함수.
+		xhr.open("get", "AjaxServlet?userId="+uid); //어떤 방식, 어디로 보낼 것인지
+		xhr.send(null); //get 방식이니까 null값으로 보냄.
+	}
+	
+	function callback(){ //응답 관련된 로직이 담긴다. 서버에서의 응답은 이곳으로 들어온다.
+		if(xhr.readyState==4){
+			if(xhr.status==200){ //성공한 코드. 우리가 주로 보는 코드는 404, 500, 405
+				//resultView 영역에 전달받은 id값을 출력... 파란색 5 크기로
+				document.getElementById("resultView").innerHTML = 
+					"<font color=blue size=5>"+xhr.responseText+"</font>";
+					
+				document.frm.userId.value = "";
+				document.frm.userId.focus();
+			}
+		}else{ //2,3인 경우...
+			//resultView 영역에 a.gif 이미지를 출력
+			document.getElementById("resultView").innerHTML = 
+				"<img src=img/a.gif>"
+		}
+	}
+</script>
+</head>
+<body>
+<h2>비동기 통신으로 id 전송하기</h2>
+<!-- action 안 달은 이유는 자바스크립트로 처리할 거니까 -->
+<form name="frm">
+아이디 <input type="text" name="userId">
+<input type="button" value="id값 전송하기" onclick="startRequest()">
+<div id="resultView"></div>
+</form>
+</body>
+</html>

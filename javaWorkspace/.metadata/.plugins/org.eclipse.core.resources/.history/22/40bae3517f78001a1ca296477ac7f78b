@@ -1,0 +1,35 @@
+package oop.javadoc;
+
+// 한줄 주석
+
+/*
+ * 여러줄 주석
+ */
+
+/**
+ * 
+ * @author KimYeonhee [소스코드 작성자 정보]
+ * @since JDK 1.8.5
+ * @version [소스코드 버전 정보] Start Version level 1.
+ *
+ */
+
+// 위의 주석은 모든 문서마다 매일 해둬야 한다.
+
+public class JavaComment {
+	/**
+	 * 해당 점수를 받은 수강자의 이름이 입력되는 변수
+	 */
+
+	public String name;
+	// 이 아래 바로 /**라고 치면 자동으로 뜸. 메소드 2개 인자(파라미터) 값을 넣도록 자동완성으로 뜸
+	/**
+	 * 
+	 * @param java Program Score
+	 * @param algo Program Score
+	 * @return 자바 성적과 알고리즘 성적의 합산으로 학생의 최종점수를 반환
+	 */
+	public int scoreSum(int java, int algo) {
+		return java + algo; // 리턴은 호출한 곳으로 돌아감... 
+	} // public void scoreSum() 이렇게 void가 들어가면 리턴 안됨. 
+}

@@ -1,0 +1,18 @@
+package oop.greet.test;
+
+import oop.greet.EncoreGreet;
+
+public class EncoreGreetTest {
+
+	public static void main(String[] args) { //실행 메소드
+		EncoreGreet en = new EncoreGreet();
+		
+		en.name="Juliet";
+		en.message="Nice Day~~~!!";
+		
+		en.sayHello();
+		// TODO Auto-generated method stub
+
+	}
+
+}

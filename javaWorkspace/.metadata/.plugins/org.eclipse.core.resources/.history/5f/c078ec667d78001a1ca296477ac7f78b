@@ -1,0 +1,10 @@
+package oop.javadoc.test;
+
+public class JavaCommentTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

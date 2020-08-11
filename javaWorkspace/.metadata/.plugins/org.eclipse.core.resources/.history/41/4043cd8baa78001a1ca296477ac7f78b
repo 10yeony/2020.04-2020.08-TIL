@@ -1,0 +1,17 @@
+package oop.self.test;
+
+import java.util.Scanner;
+
+import oop.self.Programmer;
+
+public class ProgrammerTest {
+
+	public static void main(String[] args) {
+		Programmer pro = new Programmer();
+		pro.setProgrammer("Diana", 30, 2000.0f, 100);
+		System.out.println("프로그래머를 소개합니다.");
+		System.out.println(pro.getProgrammer());
+		System.out.println("당신의 연봉은....?");
+		System.out.println(pro.getAnnualSalary());
+	}
+}

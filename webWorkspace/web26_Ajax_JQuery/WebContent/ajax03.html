@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('#ajaxBtn').click(function(){
+			//alert("ajax....");
+			$.ajax({
+				//alert("ajax...."); //비동기는 자바스크립트랑 별개이므로 이거 안 뜬다.
+				type:'post',
+				url:'HelloAjaxServlet',
+				data:'name=encoreAjax', //Map 방식
+				//dataType:'text', //보통 JSON일 경우에만 써줌. 나머지는 잘 안 씀
+				
+				success:function(data){
+					alert(data); //이건 출력됨
+				}, //callback
+				
+				error:function(){
+					alert("응답시간이 지연... Error 처리함!!");
+				},
+				timeout:1000 //1초 동안 서버로부터 응답이 없으면 에러 발생시킴...(응답 대기시간 지정)
+			});
+		});//click
+	});//ready
+</script>
+</head>
+<body>
+	<input type="button" id="ajaxBtn" value="ajaxBtn">
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- 
+배열로 each()만 살펴보겠음. each() 중요
+단순하게 배열에 있는 값을 each()로 핸들링할 것
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$('#eachBtn').click(function(){//버튼을 클릭하면 배열을 생성...
+		//선언과 동시에 생성
+		var array = [ ]; //제이쿼리에서는 이렇게 하면 배열 만들어짐. 
+		array.push('이나영');
+		array.push('원빈');
+		array.push('고소영');
+		array.push('장동건');
+		
+		//alert(array.length);
+		//alert(array.toString());
+		
+		var data = '';
+		//1. for문을 사용해서 alert창 한번 뜨고 그 안에 ㅁ,ㅁ,ㅁ,ㅁ
+		/*
+		for(var i=0; i<array.length; i++){
+			data += array[i] + " ";
+		}
+		alert(data);*/
+		
+		//2. each() 함수...(제이쿼리에서는 이걸 쓴다. 굉장히 중요)
+		/* $(array).each(function(index){ //배열이니까 내부적으로 index
+			data += index+1+"."+array[index]+" ";
+		});
+		alert(data); */
+		
+		//3. each() 함수
+		$.each(array, function(index){//이렇게 써도 됨.
+			data += index+1+"."+array[index]+" ";
+		});
+		alert(data);
+		alert($.inArray('장동건', array));//3 
+		//array에서 '장동건'의 인덱스가 나옴
+		
+		alert($.inArray('장똥건', array));//-1
+		//없는 값 찾으려고 하면 -1이 나옴.
+	});
+});
+</script>
+</head>
+<body>
+	<input type="button" value="배열에 each() 적용" id="eachBtn">
+</body>
+</html>
