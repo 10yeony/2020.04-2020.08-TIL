@@ -16,6 +16,15 @@ public class PhoneServiceImpl implements IPhoneService{
 	@Autowired
 	private IPhoneDAO iPhoneDAO;
 	
+	
+	/* < Transactional>
+	 * application-config.xml 에서 트랜잭션 처리 필요
+	 * 
+	 * insert, delete 하는 동안 다른 작업 못하게 함.
+	 * 데이터의 무결성은 굉장히 중요함.
+	 * 이 작업을 DAO에서 안 하고 Service에서 함. DAO는 데이터만 가져옴.
+	 */
+	
 	@Transactional
 	public int insert(Phone phone) {
 		return iPhoneDAO.insert(phone);

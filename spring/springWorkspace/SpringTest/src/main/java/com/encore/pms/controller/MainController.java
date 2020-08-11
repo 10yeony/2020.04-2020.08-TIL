@@ -22,6 +22,10 @@ public class MainController {
 	@Autowired
 	private IPhoneService iPhoneService;
 	
+	
+	/* @RequestMapping을 
+	 * @GetMapping이나 @PostMapping으로 더 분명하게 나타낼 수 있음
+	 */
 	@GetMapping("regPhone.do")
 	public String getRegPhone(Model model) {
 		model.addAttribute("title", "핸드폰 관리 - 핸드폰 등록폼");
