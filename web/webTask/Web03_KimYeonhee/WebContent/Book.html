@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서 등록 화면</title>
+<style>
+	header{
+		background: #EAEAEA;
+		width: 90%;
+		margin: 0 auto;
+		box-sizing: border-box;
+		padding: 30px;
+		text-align: center;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	
+	section{
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	section table{
+		width: 100%;
+		border-collapse: collapse;
+	}
+	section table td{
+		border: 1px solid #EAEAEA;
+		padding: 0;		
+	}
+	section table span{
+		display: inline-block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	footer{
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	footer #bottom{
+		background: #EAEAEA;
+		padding: 20px 0 30px 0;
+	}
+	footer #copyright{
+		color: #050099;
+	}
+</style>
+</head>
+<body>
+<form action="BR" method="post">
+<header>도서 등록 화면</header>
+<section>
+	<table>
+		<tr>
+			<td colspan="2" style="text-align: right;">
+				<span><font color=orange size="0.1">■</font> 표시가 된 항목은 필수 입력 항목입니다.</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background: #EAEAEA; padding: 20px;">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=orange size="0.1">■</font> 도서번호</span>
+			</td>
+			<td>
+				<input type="number" name="num1" required="required"> - 
+				<input type="number" name="num2" required="required"> - 
+				<input type="number" name="num3" required="required">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=orange size="0.1">■</font> 도서제목</span>
+			</td>
+			<td>
+				<input type="text" name="title" required="required">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=orange size="0.1">■</font> 도서종류</span>
+			</td>
+			<td>
+				<select name=kind>
+					<option>해당 항목을 선택하세요</option>
+					<option>프로그래밍</option>
+					<option>운영체제</option>
+					<option>네트워크</option>
+					<option>데이터베이스</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=#EAEAEA size="0.1">■</font> 출판국가</span>
+			</td>
+			<td>
+				<input type="radio" name=nation value="domestic" checked> 국내도서 
+				<input type="radio" name=nation value="foreign"> 외국도서
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=#EAEAEA size="0.1">■</font> 출판일</span>
+			</td>
+			<td>
+				<input type="date" name="date">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=#EAEAEA size="0.1">■</font> 출판사</span>
+			</td>
+			<td>
+				<select name="publisher">
+					<option>해당 항목을 선택하세요</option>
+					<option>엔코아</option>
+					<option>한빛미디어</option>
+					<option>시나공</option>
+					<option>이지스퍼블리싱</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=orange size="0.1">■</font> 저   자</span>
+			</td>
+			<td>
+				<input type="text" name="author" required="required">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=#EAEAEA size="0.1">■</font> 도서가격</span>
+			</td>
+			<td>
+				<input type="text" name="price"> 
+				<select>
+					<option>원</option>
+					<option>달러</option>
+					<option>유로</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span><font color=#EAEAEA size="0.1">■</font> 요약내용</span>
+			</td>
+			<td>
+				<textarea rows="4" cols="50" name="content"></textarea>
+			</td>
+		</tr>
+	</table>
+</section>
+<footer>
+	<div id="bottom">
+		<button type="submit" name=submit>도서등록</button>
+		<button type="reset" name=reset>취소</button>
+	</div>
+	<div id="copyright">
+		<span>사전 도움말 - 이용약관 - 개인정보취급방침 - 책임의 한계와 법적고지 - 고객센터<br/></span>
+		<span>Copyright ⓒ 2020. HaBaRee. All Rights Reserved.</span>
+	</div>
+</footer>
+</form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Library</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+	.container{
+		width: 50%;
+		border: 3px solid grey;
+		margin: 30px auto;
+		padding-left: 30px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	#img{
+		text-align: center;
+		line-height: 150px;
+	}
+	img{
+		width: 100px;
+		height: 80px;
+		vertical-align: middle;
+	}
+	
+	table #title{
+		font-size: 18px;
+		text-align: center;
+	}
+	table .idpwd{
+		text-align: right;
+		padding-right: 10px;
+	}
+	table #submit{
+		margin-top: 5px;
+		padding-top: 5px;
+		border-top: 1px dotted;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+	$('#frm').submit(function(){
+		var id = $('input:eq(0)').val();
+		var pwd = $('input:eq(1)').val();
+		if(id=="") {
+			alert("아이디를 입력하세요.");
+			
+			return false;
+			id.focus();
+		}
+		else if(pwd==""){
+			alert("비밀번호를 입력하세요.");
+			return false; 
+			pwd.focus();
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<p id=img><img src="https://image.flaticon.com/icons/svg/2232/2232688.svg"></p>
+		</div>
+		<div class="col-lg-8">
+			<form action="DS" method="post" id="frm">
+			<input type="hidden" name="command" value="login">
+			<table>
+				<tr>
+					<td colspan="2"><p id="title">로그인하여 주세요</p></td>
+				</tr>
+				<tr>
+					<p class="input">
+						<td><p class="idpwd">ID </p></td>
+						<td><input type="text" name="userId"></td>
+					</p>
+				</tr>
+				<tr>
+					<p class="input">
+						<td><p class="idpwd">PASSWORD </p></td> 
+						<td><input type="password" name="password"></td>
+					</p>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p id="submit"><button type="submit" class="btn btn-info">LOGIN</button></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

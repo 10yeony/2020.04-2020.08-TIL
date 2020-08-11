@@ -1,0 +1,83 @@
+<!-- 
+파일이 실행되자마자 알아서 돌아감.
+선택자도 없고 함수도 없음.
+그렇게 이벤트가 필요하지 않음. 알고리즘에 가까움.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin: 100px 100px;
+	}
+	#result{ 
+		background: skyblue; 
+		height: 150px;
+		text-align: center;
+	}
+	span{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		background: yellow;
+		box-sizing: border-box;
+		margin: 50px 40px;
+		padding-top: 7px;
+		border-radius: 50%;
+		font-weight: bold;
+		text-align: center;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+//$(function(){}); //이벤트와 선택자를 연결하기 위함인데 이럴 때는 필요 없음.
+var numbers; //5,23,6,12,33,45
+var count = 0;
+var intervalId;
+var pick;
+var totalNum = 45;
+
+function startGame(){
+	numbers = selectNumber();
+	intervalId = setInterval(displayNumber, 1000);
+	//displayNumber가 콜백함수. 1초마다 계속적으로 호출. 1초마다 하나씩 찍음.
+	//다 되면 intervalId를 쫑내면 됨. 객체를 스톱...
+}
+
+function selectNumber(){
+	//45개의 숫자를 6개의 숫자를 추려야 함.
+	var numbers = new Array(6);
+	var flags = new Array(45);
+	for(var i=0; i<45; i++){
+		flags[i] = i+1;
+	}
+	for(var i=0; i<6; i++){
+		pick = Math.floor(Math.random()*totalNum);
+		numbers[i] = flags[pick];
+		flags.splice(pick, 1);
+		totalNum--;
+	}
+	return numbers;
+}
+
+function displayNumber(){
+	//특정한 div 영역에 하나씩 뿌림.
+	//append()를 이용해서 numbers 안에 들어있는 숫자를 result 영역에 붙여나간다...
+	//만약에 count가 6이 되면 intervalId를 멈춘다...
+	// clearInterval() 하면 멈춰진다.
+	var msg = '<span>'+numbers[count]+'</span>';
+	if(count<6) $('#front').append(msg);
+	else clearInterval();
+	count++;
+}
+
+window.onload = startGame;
+</script>
+</head>
+<body>
+	<h3>대박을 기원합니다~~~</h3>
+	<div id="result"><div id="front"></div></div>
+</body>
+</html>

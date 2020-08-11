@@ -1,0 +1,58 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+import com.encore.spring.model.MemberService;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	
+	@Autowired
+	private MemberDAO memberDao;
+	
+	@Override
+	public List<Member> viewAllMember() {
+		return memberDao.viewAllMember();
+	}
+
+	@Override
+	public Member findMember(String id) {
+		return memberDao.findMember(id);
+	}
+	
+	@Override
+	public boolean idCheck(String id) {
+		Member vo = findMember(id);
+		if(vo == null) { //사용 가능한 아이디
+			return false;
+		}else { //아이디 중복
+			return true;
+		}
+	}
+	
+	@Override
+	public Member login(String id, String password) {
+		Member vo = findMember(id);
+		if(vo.getPwd().equals(password)) { //아이디와 비밀번호가 일치한다면
+			return vo;
+		}else { //아이디 또는 비밀번호가 틀렸다면
+			return null;
+		}
+	}
+
+	@Override
+	public void registerMember(Member vo) {
+		memberDao.registerMember(vo);
+	}
+
+	@Override
+	public void updateMember(Member vo) {
+		memberDao.updateMember(vo);
+	}
+
+}
