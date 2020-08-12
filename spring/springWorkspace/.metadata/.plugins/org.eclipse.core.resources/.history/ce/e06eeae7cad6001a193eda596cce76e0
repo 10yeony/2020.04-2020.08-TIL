@@ -1,7 +1,0 @@
-package ibatis.services.user.impl;
-
-import ibatis.services.user.UserService;
-
-public class MyBatisUserServiceImpl11 implements UserService {
-
-}

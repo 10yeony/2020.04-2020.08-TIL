@@ -1,5 +1,0 @@
-package ibatis.services.user.impl;
-
-public class MyBatisUserDAOImpl10 {
-
-}
