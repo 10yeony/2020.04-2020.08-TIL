@@ -37,8 +37,7 @@ public class GreetingController {
 	//http://127.0.0.1:8888/rest/greet2?name=엔코아
 	//http://127.0.0.1:8888/rest/greet2 로 검색하면 name 디폴트값으로 world가 들어감
 	@GetMapping("/greet2")
-	public Greeting sayGreet2(@RequestParam(value="name", required=false, defaultValue="world") 
-																	String name) {
+	public Greeting sayGreet2(@RequestParam(value="name", required=false, defaultValue="world") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
 	}
 }
