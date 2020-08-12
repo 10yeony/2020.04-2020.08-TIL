@@ -1,0 +1,5 @@
+package com.encore.rest.domain;
+
+public class Person {
+
+}

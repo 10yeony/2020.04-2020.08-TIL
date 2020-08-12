@@ -1,0 +1,22 @@
+package com.encore.pms.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.encore.pms.dto.Phone;
+import com.encore.pms.service.IPhoneService;
+
+@RestController
+public class PhoneRestController {
+	
+	@Autowired
+	private IPhoneService servce;
+	
+	@GetMapping("/phone/{num}")
+	public Phone select(@PathVariable String num) {
+		
+		return null;
+	}
+}

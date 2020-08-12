@@ -1,0 +1,20 @@
+package com.encore.rest.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.encore.rest.domain.Greeting;
+
+/* 버전 4.3 이상을 요구함
+프론트와 상관 없는 독립적인 기술. 요청이 어떻게 들어왔는지 알 필요가 없음. */
+@RestController
+public class GreetingController {
+	
+	//http://127.0.0.1:888/rest/greet 
+	@RequestMapping("/greet") //GetMapping("/greet")와 같다
+	public Greeting sayGreet() {
+		return new Greeting(314L, "Restful API"); 
+		//결과 페이지를 리턴하지 않고, 데이터만 리턴한다!
+		//객체를 던지는데 json으로 반환해서 던진다. 그래서 json 라이브러리가 필요!
+	}
+}
