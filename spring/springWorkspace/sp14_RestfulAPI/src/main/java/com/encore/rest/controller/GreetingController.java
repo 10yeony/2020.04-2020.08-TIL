@@ -24,7 +24,7 @@ public class GreetingController {
 	
 	//http://127.0.0.1:8888/rest/greet/33
 	/*
-	 * @PathVariable은 파라미터를 URL경로에 포함시키는 방법이다.
+	 * @PathVariable은 파라미터를 URL경로에 포함시키는 방법이다.(안 쓰면 에러남)
 	 * {}를 이용해서 매핑되는 URL 경로에 작성해주면 해당 @PathVariable 어노테이션으로 작성된 파라미터에
 	 * 자동으로 매핑된다.
 	 * 
@@ -35,8 +35,9 @@ public class GreetingController {
 	}
 	
 	//http://127.0.0.1:8888/rest/greet2?name=엔코아
+	//http://127.0.0.1:8888/rest/greet2 로 검색하면 name 디폴트값으로 world가 들어감
 	@GetMapping("/greet2")
-	public Greeting sayGreet2(@RequestParam(value="name", required=false,defaultValue="world") 
+	public Greeting sayGreet2(@RequestParam(value="name", required=false, defaultValue="world") 
 																	String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
 	}

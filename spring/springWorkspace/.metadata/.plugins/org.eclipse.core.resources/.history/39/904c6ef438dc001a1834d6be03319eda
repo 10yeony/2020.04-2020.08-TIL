@@ -1,5 +1,0 @@
-package com.encore.rest.controller;
-
-public class GreetingController {
-	
-}

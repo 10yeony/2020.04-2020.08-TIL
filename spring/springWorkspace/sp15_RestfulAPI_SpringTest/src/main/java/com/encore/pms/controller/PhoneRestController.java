@@ -23,18 +23,22 @@ public class PhoneRestController {
 	@Autowired
 	private IPhoneService service;
 	
+	/* 내부적으로 제공하는 Map 방식 객체 => ResponseEntity */
 	@GetMapping("/phone/{num}")
 	public ResponseEntity select(@PathVariable String num) {
 		try {
 			Phone phone = new Phone();
 			phone.setNum(num);
 			Phone selected=service.select(phone);
-			return new ResponseEntity(selected, HttpStatus.OK);
+			return new ResponseEntity(selected, HttpStatus.OK); //상태정보도 같이 넣어야 함.
 		}catch(RuntimeException e) {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);
 		}
 	}
 	
+	//GetMapping은 전부 다 select인데, 
+	//전체를 다 가져올 때 allPhone, phones 이렇게 이름 붙이지 않음.(convention)
+	//전체를 가져올 때는 아래처럼 phone으로 쓰고, 위의 메소드처럼 특정 폰 가져올 때는 phone 뒤에 쓰는 것.
 	@GetMapping("/phone")
 	public ResponseEntity select() {
 		try {
@@ -66,7 +70,7 @@ public class PhoneRestController {
 		}
 	}
 	
-	/*
+	/* update 메소드 없어서 에러남... 나중에 만들 것.
 	 * @PutMapping("/phone") public ResponseEntity update(@RequestBody Phone phone)
 	 * throws Exception{ int result=service.update(phone);
 	 * 

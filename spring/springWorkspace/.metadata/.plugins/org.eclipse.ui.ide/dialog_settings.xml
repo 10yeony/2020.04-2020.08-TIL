@@ -111,6 +111,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="C:\Users\10yeo\Documents\Github\TIL\spring\springWorkspace\sp15_RestfulAPI_SpringTest"/>
+			<item value="C:\Users\10yeo\Documents\Github\TIL\spring\springWorkspace\sp14_RestfulAPI"/>
+			<item value="C:\Users\10yeo\Documents\Github\TIL\spring\springWorkspace\sp13_SpringTest"/>
 			<item value="C:\kyh\eclipse\springWorkspace\SpringTest"/>
 			<item value="C:\kyh\eclipse\webWorkspace\shobu"/>
 			<item value="C:\Users\10yeo\Desktop\sp08_SpringMVC_ViewResolver_teacher"/>
