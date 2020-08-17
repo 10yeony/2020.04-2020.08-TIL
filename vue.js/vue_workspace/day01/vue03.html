@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('h2').text('시작');
+
+            var model = {
+                message: 'Vue 시작입니다'
+            }
+
+            var app = new Vue({
+                el: "#sample",
+                data: model
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 1. 화면구성 :: View -->
+    <div id="sample">
+        <h2 align="center">START!!</h2>
+        <h3>{{message}}</h3>
+    </div>
+</body>
+
+</html>
+
+<!--
+++++++++++ 해보기 ++++++++++++
+모델 데이터에 이름, 나이, 사는곳을 객체로 선언하고
+화면에 테이블 형식으로 출력
+EX) 이름: 홍길동
+나이 : 11
+사는곳 : ㅂㅂㅂ
+vue04_exam.html
+-->
