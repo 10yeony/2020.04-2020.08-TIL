@@ -1,0 +1,49 @@
+<!--
+{{ }}, v-text, v0html
+v-bind:src, v-bind:align -- 여러개의 속성 바인딩
+v-model
+
+v-for
+
+v-if
+v-show
+
+v-for / v-show 차이점 분명히 알아가기!!
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- show가 false 값일 때 아예 메모리에 안 올림. 아래보다 더 효율적. -->
+
+        <!-- 콘솔창 띄워보면 아래 주석만 찍힘 -->
+        <!-- -->
+        <h1 v-if="show">나는 보입니다.
+        </h1>
+
+        <!-- 메모리에 일단 올리고 속성을 none으로 함. -->
+
+        <!-- 콘솔창 띄우면 속성이 display:none으로 되어 있음 -->
+        <h1 style="display: none;">나는 보입니다.
+        </h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                show: false
+            }
+        })
+    </script>
+</body>
+
+</html>
