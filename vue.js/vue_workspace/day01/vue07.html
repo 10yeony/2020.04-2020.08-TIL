@@ -1,0 +1,37 @@
+<!-- 양방향 데이터 바인딩... 
+1. DOM 구조로 html 문서가 메모리에 올라감
+2. 특정한 지점에 데이터가 바인딩됨.(Vue에서 화면으로 가는 단방향)
+3. 화면에서 input으로 데이터를 바인딩함(양방향)
+
+뷰에서만 볼 수 있는 독특한 기술
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- 화면 id를 보통 wrap이나 app로 준다 -->
+    <div id="app">
+        {{message}}<br>
+        <input type="text" name="greet" v-model="message" />
+        <!-- v-model 속성을 쓰면 message에 입력값이 할당됨 -->
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "First Hello Vue~~!!"
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
