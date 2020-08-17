@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!--순서 중요)
+        html 부분을 Dom 구조로 먼저 메모리에 올려놓고, 그리고 나서 지정해야 함.
+        Script 부분이 이렇게 위에 올라오면 안 된다. 
+        html 부분이 아직 로딩이 안 된 상태에서 렌더링을 시도하기 때문이다.-->
+
+    <div id="app">
+        <!-- 콧수염 표현식 (Mustache Expression) : title 있는 그대로 출력 -->
+        <div>{{title}}</div>
+
+        <!-- Directive1 : title 있는 그대로 출력 -->
+        <div v-text="title"></div>
+
+        <!-- Directive2 : html을 해석해서 출력함 -->
+        <div v-html="title"></div>
+    </div>
+
+    <script>
+        var model = {
+            title: '<h2>Encore</h2>'
+        }
+        var app = new Vue({
+            el: '#app',
+            data: model
+        })
+    </script>
+</body>
+
+</html>
