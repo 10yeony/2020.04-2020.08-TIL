@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h3>{{title}}</h3>
+        </div>
+        <div>
+            <h3>{{title | toUpper}}</h3>
+        </div>
+        <div>
+            <h3>{{title | toLower}}</h3>
+        </div>
+    </div>
+    <script>
+        var model = {
+            title: 'Encore Academy'
+        }
+        var app = new Vue({
+            el: '#app',
+            data: model,
+
+            /*filters는 반드시 인자값과 리턴타입이 있어야 한다는 점에서 methods와 다름.
+              값을 필터링하는 것임.
+              사용할 때는 {{ }} 안에 값 | 필터명으로 쓴다.
+
+              어떤 경우에 fulters를 쓰는가..
+              비동기통신으로 데이터 받을 때 소수점 두자리까지라든지 처리할 때 씀 
+              주로 숫자 데이터를 받아서 소수점 몇자리까지 끊어서 출력할지 걸러서 씀 */
+            filters: {
+                toUpper: function(value) {
+                    return value.toUpperCase();
+                },
+                toLower: function(value) {
+                    return value.toLowerCase();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
