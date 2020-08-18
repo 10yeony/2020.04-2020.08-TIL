@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <h2>v-for</h2>
+    <div id="app">
+        <h2>객체배열 - 내용 출력</h2>
+        <ul>
+            <li v-for="e in encore">
+                지역 : {{e.name}}, {{e.count}}개반
+            </li>
+        </ul>
+
+        <h2>객체배열 - 내용 출력</h2>
+        <ul>
+            <li v-for="e, index in encore">
+                {{index+1}}. {{e.name}}, {{e.count}}개반
+            </li>
+        </ul>
+
+        <!-- 위와 출력 결과는 같은데 괄호로 묶어주면 가독성이 더 좋음 -->
+        <h2>객체배열 - 내용 출력</h2>
+        <ul>
+            <li v-for="(e, index) in encore">
+                {{index+1}}. {{e.name}}, {{e.count}}개반
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                encore: [{
+                    name: '영등포구',
+                    count: 3
+                }, {
+                    name: '남부지구',
+                    count: 5
+                }, {
+                    name: '서초지구',
+                    count: 7
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>
