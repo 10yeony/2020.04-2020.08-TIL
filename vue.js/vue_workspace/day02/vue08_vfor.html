@@ -11,14 +11,14 @@
 <body>
     <h2>v-for</h2>
     <div id="app">
-        <h2>객체배열 - 내용 출력</h2>
+        <h2>객체 배열 - 내용 출력</h2>
         <ul>
             <li v-for="e in encore">
                 지역 : {{e.name}}, {{e.count}}개반
             </li>
         </ul>
 
-        <h2>객체배열 - 내용 출력</h2>
+        <h2>객체 배열 - 내용 출력</h2>
         <ul>
             <li v-for="e, index in encore">
                 {{index+1}}. {{e.name}}, {{e.count}}개반
@@ -26,7 +26,7 @@
         </ul>
 
         <!-- 위와 출력 결과는 같은데 괄호로 묶어주면 가독성이 더 좋음 -->
-        <h2>객체배열 - 내용 출력</h2>
+        <h2>객체 배열 - 내용 출력</h2>
         <ul>
             <li v-for="(e, index) in encore">
                 {{index+1}}. {{e.name}}, {{e.count}}개반
