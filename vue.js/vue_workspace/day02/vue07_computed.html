@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 
+            methods는 부를 때마다 호출됨.
+            computed는 이미 했던 똑같은 연산의 동일한 값이라면 computing하지 않고
+            캐싱에 저장된 값을 캐싱에서 꺼내다 씀.
+         -->
+        <!-- computed를 사용하면 {{sum}} 이렇게 속성처럼 접근해야 한다... -->
+        <div>
+            <span><b>methods 사용</b></span><br/>
+            <input type="text" placeholder="methods" v-model="num1"><br> 1부터 입력된 수까지의 합계 : <span>{{sum_methods()}}</span><br/><br/>
+        </div>
+        <div>
+            <span><b>computed 사용</b></span><br/>
+            <input type="text" placeholder="computed" v-model="num2"><br> 1부터 입력된 수까지의 합계 : <span>{{sum_computed}}</span>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num1: '',
+                num2: '',
+            },
+            methods: {
+                sum_methods: function() {
+                    var n = Number(this.num1); //숫자로 바꿔줌
+                    if (Number.isNaN(n) || n < 1) return 0;
+                    return (n * (n + 1)) / 2;
+                }
+            },
+            computed: {
+                sum_computed: function() {
+                    var n = Number(this.num2); //숫자로 바꿔줌
+                    if (Number.isNaN(n) || n < 1) return 0;
+                    return (n * (n + 1)) / 2;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
