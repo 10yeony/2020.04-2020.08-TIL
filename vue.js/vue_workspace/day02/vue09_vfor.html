@@ -1,0 +1,55 @@
+<!--
+JavaScript에서는 다른 언어와 달리 == 연산자 말고도 === 연산자가 존재한다.
+==는 타입 상관 없이 갑만 비교한다.
+반면에 ===은 값은 물론 타입까지 비교하는 연산자이다.
+
+0 == '' //true
+0 == '0' //true
+1 == true //true
+
+이 모든 것들을 ===으로 비교하면 false 나옴.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <h2>v-for와 v-if 함께 사용하기</h2>
+    <div id="app">
+        <label>encore 특정 지역 개설된 반수 : </label>
+
+        <!-- v-model.number라고 하면 숫자 타입으로 인식함 -->
+        <input type="number" v-model.number="inputCount">
+        <ul>
+            <li v-for="(e, index) in encore" v-if="e.count == inputCount">
+                지역 : {{e.name}}, {{e.count}}개반
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                inputCount: 0,
+                encore: [{
+                    name: '영등포구',
+                    count: 3
+                }, {
+                    name: '남부지구',
+                    count: 5
+                }, {
+                    name: '서초지구',
+                    count: 7
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>
