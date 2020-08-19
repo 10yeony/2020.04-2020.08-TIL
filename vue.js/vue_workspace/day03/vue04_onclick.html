@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-once ::해당 엘러먼트를 단 한번만 랜더링한다. 
+        마운팅이 한번으로 끝남. 값이 바뀌더라도 업데이트 안함.
+        정적인 엘러먼트로 처리할 때 사용-->
+        <!-- {{ }} 안에 string이랑 같이 쓸 수 있음 -->
+        <h2 v-once>{{'초기값 : '+count}}</h2>
+        <h2>{{'현재값 : '+count}}</h2>
+        <!-- 클릭할 때마다 count 증가.. 메소드 연결해도 되는데 그냥 이렇게 바로 써도 됨 -->
+        <button @click="count++">+</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 1
+            }
+        })
+    </script>
+</body>
+
+</html>
