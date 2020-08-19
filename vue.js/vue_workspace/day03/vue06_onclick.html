@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>페이지 이동... SUBMIT...ACTION으로 안 넘어가도록</h2>
+        <!-- 페이지 이동함 -->
+        <a href="vue05_onclick.html" @click="sendMsg1">페이지 이동 막기1</a><br/>
+
+        <!-- 페이지 이동하지 않음. -->
+        <a href="vue05_onclick.html" @click="sendMsg2">페이지 이동 막기2</a><br/>
+
+        <!-- 페이지 이동하지 않음. 뷰에서는 아래처럼 이벤트를 막아줄 수 있음 -->
+        <a href="vue05_onclick.html" @click.prevent="sendMsg1">페이지 이동 막기3</a><br/>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                sendMsg1() {
+                    alert('이동막기1');
+                },
+                sendMsg2(event) {
+                    event.preventDefault(); //자바스크립트 문법에서 기본적인 이벤트가 막힘
+                    alert('이동막기2');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
