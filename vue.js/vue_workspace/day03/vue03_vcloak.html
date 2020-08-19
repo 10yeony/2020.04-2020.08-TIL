@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            /*v-cloak은 이렇게 선택자 지정함*/
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 자바스크립트가(setTimeout) 완전히 실행되기 전까지 display 속성을 none으로 지정한다. -->
+        <h2 v-cloak>{{title}}</h2>
+    </div>
+    <script>
+        //화살표 함수는 function이 생략됨.
+        //setTimeout은 특정한 시간을 갭을 둠. 
+        //서버의 응답이 2초간 지연되는 것을 이렇게 표현하겠음.
+        setTimeout(() => {
+            new Vue({
+                el: '#app',
+                data: {
+                    title: '안녕하세요'
+                }
+            })
+        }, 2000);
+    </script>
+</body>
+
+</html>
