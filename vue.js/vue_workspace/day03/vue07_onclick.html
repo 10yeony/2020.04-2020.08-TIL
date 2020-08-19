@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        아이디 :
+        <!-- 그냥 @keyup 은 모든 키를 다 감지함 -->
+        <input type="text" placeholder="검색할 아이디 입력" v-model="id" @keyup="sendId">
+
+        <!-- enter 키만 감지하도록 함 -->
+        <!-- enter가 13으로 매핑되어 있음 -->
+        <input type="text" placeholder="검색할 아이디 입력" v-model="id" @keyup.enter="sendId">
+        <input type="text" placeholder="검색할 아이디 입력" v-model="id" @keyup.13="sendId">
+        <button @click="sendId()">결과보기</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                id: ''
+            },
+            methods: {
+                sendId() {
+                    alert(this.id);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
