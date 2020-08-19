@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- greet, greet() 둘 다 됨. -->
+        <!-- 그런데 greet()으로 썼을 때는 클릭하고 나서 
+            console.info()로 이벤트 정보가 안 뜨고 에러남 -->
+        <button v-on:click="greet">Greet</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                greet: function(event) {
+                    //event : 인자값이 아니라 이벤트를 뜻함(여기서는 클릭이벤트)
+                    //인자값이 있을 경우에는 변수와 구분해줘야 하므로 event 객체 앞에 $ 붙임 (name, $event)
+                    alert('Hello~~~~' + this.name + '!!!!');
+                    console.info(event);
+                    console.info(event.target); //클릭 이벤트 정보가 콘솔창에 출력
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
