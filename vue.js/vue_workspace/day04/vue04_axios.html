@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <section v-if="errored">
+            <p>Error In Axios Transport</p>
+        </section>
+        <secition v-else>
+            <div v-if="loading">loading....</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>이름(eng)</th>
+                        <th>이름(kor)</th>
+                        <th>국기</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="flag in flags">
+                        <td>{{flag.name}}</td>
+                        <td>{{flag.korname}}</td>
+                        <td><img :src="flag.flag"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </secition>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    flags: null,
+                    errored: false,
+                    loading: true
+                }
+            },
+            mounted() {
+                axios
+                    .get('./flags.json')
+                    .then(response => (this.flags = response.data.nationalflags))
+                    //flags.json 파일 보면 nationalflags 안에 다 들어있어서 더 들어가야 함.
+                    .catch(error => {
+                        console.log(error);
+                        this.errored = true;
+                    })
+                    .finally(() => this.loading = false)
+            }
+        })
+    </script>
+</body>
+
+</html>
