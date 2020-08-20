@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        
+        #second>h2 {
+            margin: auto;
+            text-align: center;
+            color: blue;
+        }
+        
+        #tid {
+            border: 1px solid blue;
+            margin: auto;
+            text-align: center;
+        }
+        
+        td {
+            border: 1px solid green;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="second">
+        <h2>ENCORE SAFE FOOD</h2>
+
+    </div>
+    <div id="app">
+        <section v-if="errored">
+            <!-- 에러가 발생할 경우 -->
+            <p>Error In Axios Transport</p>
+        </section>
+        <section v-else>
+            <!-- 그렇지 않을 경우 -->
+            <table id="tid">
+                <thead>
+                    <tr>
+                        <td>분류</td>
+                        <td>이름</td>
+                        <td>이미지</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="f in info" style="border: 1px solid green;">
+                        <td>{{f.productGb}}</td>
+                        <td>{{f.prdlstNm}}</td>
+                        <td><img :src='f.imgurl1'></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                /* 전처럼 data:{} 이렇게 입력하면 안 됨 
+                   data(){} 이렇게 입력해야 한다. 
+                   restful 같은 동적인 데이터를 처리할 때는 반드시 data() */
+                return {
+                    info: null,
+                    errored: false
+                }
+            },
+            //axios 기술..
+            //mounted가 훅 들어올 때 이쪽으로 들어오도록 정의
+            mounted() {
+                axios
+                    .get('./food.json')
+                    .then(response => (this.info = response.data))
+                    /* 이렇게 하면 this가 함수 자체를 가리키게 돼서 안 됨.
+                       function 써서 할 수는 있는데 코드가 복잡하게 됨.
+                       그래서 arrow function을 쓴다.
+                    .then(function(Response) {
+                        this.info = response.data
+                    })
+                    */
+                    .catch(error => {
+                        console.log(error);
+
+                        /* 여기서 errored 값 변경
+                           errored는 뷰의 속성이므로 this 붙여줘야 함.*/
+                        this.errored = true;
+                    })
+            }
+        })
+    </script>
+</body>
+
+</html>
