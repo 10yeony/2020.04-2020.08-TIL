@@ -1,0 +1,48 @@
+<!--
+    ES6(ECMAScript 6)에서 추가된 화살표 함수
+    - ECMAScript 2015(연도 기준) / ECMAScript 6(버전 기준)
+    
+    1) arrow function -- 가장 중요 
+                      -- Vue의 비동기 기술이 Axios
+                         이 때 arrow function 써야 직관적이고 깔끔함 
+    2) let, const
+    3) grave accent `
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <script>
+        'use strict'; //arrow 함수 오류 날 경우 문자를 이렇게 써주면 됨.
+        let func1 = function() {
+            console.log('익명 func1');
+        }
+        func1();
+
+        func1 = () => { //화살표 함수는 function을 쓰지 않는다.
+            console.log('화살표 func1');
+        }
+        func1();
+
+        let func2 = function(num) {
+            console.log('익명 func2', num);
+        }
+        func2(2);
+
+        //화살표 함수
+        func2 = (num) => {
+            console.log('익명 func2', num)
+        }
+        func2(2);
+    </script>
+</body>
+
+</html>
