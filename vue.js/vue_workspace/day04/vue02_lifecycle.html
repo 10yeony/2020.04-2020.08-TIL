@@ -1,0 +1,74 @@
+<!--
+    Vue 인스턴스가 생성될 때,
+    중요한 몇단계가 거친다... 이를 Life Cycle이라고 한다.
+
+    1. Vue 인스턴스가 생성 : created가 호출(=훅이 들어온다. 훅 된다)
+                            data, el, methods, computed, filters 같은 속성들이 이제서야 활성화되어진다.
+    2. HTML DOM에 랜더링(=부착 =mount) : mounted가 호출(=훅이 들어온다. 훅 된다)
+                            반응형으로 받아온 데이터를 el에서 지정한 화면단으로 랜더링 시킨다.
+    3. 업데이트 : beforeupdate, updated가 호출(=훅이 들어온다. 훅 된다)
+                            랜더링한 DOM 데이터의 값을 변경할 때마다 계속 호출됨
+                            만약에 변경된 값들을 DOM을 이용해서 접근하려 한다면 updated에서 해야 한다.
+    4. Vue 인스턴스가 메모리에서 사라짐 : destroyed가 호출.... 훅 된다.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app" ref="app">
+        <!-- 돔의 요소에 접근할 때 ref를 쓸 수 있음. -->
+        <span>클릭 카운트 : {{count}}</span>
+        <button @click="count++">클릭</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            beforeCreate: function() {
+                /*count를 가져다가 쓸 수 없는 상태.
+                  객체가 생성되고 나서 초기화된 직후에 호출되는 건 맞지만
+                  아직 옵션들에 접근할 수 있는 상태는 아님.
+                  그래서 console 창에 undefined로 뜬다.*/
+                console.log('beforeCreate : ' + this.count);
+            },
+            created: function() {
+                //옵션들에 접근해서 쓸 수 있는 상태
+                console.log('created : ' + this.count); //여기서 count는 뷰 객체의 옵션
+
+                //console 창에서 undefined... 아직 화면단과 연결은 무리다
+                console.log('created에 연결된 DOM 엘러먼트 : ' + this.$el);
+            },
+            beforeMount: function() {
+                console.log('beforeMount : ' + this.count);
+
+                /* DOM에 랜더링된 것 확인 가능. */
+                console.log('bdforeMount에 연결된 DOM 엘러먼트 : ' + this.$el);
+            },
+            mounted: function() {
+                console.log('mounted : ' + this.count);
+
+                /* DOM에 랜더링할 때는 mounted에서 하는 게 관례임.
+                beforeMounted에서도 되지만 mounted에서 하는 게 더 안정적*/
+                console.log('mounted에 연결된 DOM 엘러먼트 : ' + this.$el);
+            },
+            //버튼 클릭할 때마다 count가 변경되어 출력됨
+            beforeUpdate: function() {
+                console.log('beforeUpdate : ' + this.count);
+            },
+            updated: function() {
+                console.log('updated : ' + this.count);
+            }
+        })
+    </script>
+</body>
+
+</html>
